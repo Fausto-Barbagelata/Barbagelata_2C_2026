@@ -165,10 +165,7 @@ void BCD_a_GPIO(uint8_t bcd_digit, gpioConf_t *gpio_array);
  * @param[in] bcd_gpios Arreglo de GPIO utilizados para transmitir el código BCD.
  * @param[in] lcd_select Arreglo de GPIO utilizados para seleccionar los dígitos.
  */
-void mostrarNumeroLCD(uint32_t data,
-                      uint8_t digits,
-                      gpioConf_t *bcd_gpios,
-                      gpioConf_t *lcd_select);
+void mostrarNumeroLCD(uint32_t data, uint8_t digits, gpioConf_t *bcd_gpios, gpioConf_t *lcd_select);
 
 /*==================[external functions definition]==========================*/
 
@@ -245,10 +242,7 @@ void BCD_a_GPIO(uint8_t bcd_digit, gpioConf_t *gpio_array)
  * @param[in] lcd_select Arreglo de GPIO utilizados para seleccionar
  *                       cada posición del display.
  */
-void mostrarNumeroLCD(uint32_t data,
-                      uint8_t digits,
-                      gpioConf_t *bcd_gpios,
-                      gpioConf_t *lcd_select)
+void mostrarNumeroLCD(uint32_t data, uint8_t digits, gpioConf_t *bcd_gpios, gpioConf_t *lcd_select)
 {
     uint8_t digitos[maximo_de_digitos] = {0};
 
@@ -318,10 +312,7 @@ void app_main(void)
     uint8_t digits_count = 3;
 
     /* Envío del número al display. */
-    mostrarNumeroLCD(test_value,
-                     digits_count,
-                     bcd_gpios,
-                     lcd_select);
+    mostrarNumeroLCD(test_value, digits_count, bcd_gpios, lcd_select);
 }
 
 /*==================[end of file]============================================*/
