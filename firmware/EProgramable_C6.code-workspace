@@ -32,6 +32,9 @@
         },
         {
             "path": "projects/MedirDistanciaUltra"
+        },
+        {
+            "path": "projects/MedirDistanciaUltra2"
         }
     ],
     "settings": {

@@ -18,6 +18,7 @@ set(srcs
     "devices/src/switch.c"
     "devices/src/lcditse0803.c"
     "devices/src/hc_sr04.c"
+    "devices/src/adxl345.c"
     # "devices/src/ws2812b.c"
     # "devices/src/neopixel_stripe.c"
     # "devices/src/ili9341.c"
