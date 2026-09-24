@@ -35,10 +35,15 @@
         },
         {
             "path": "projects/MedirDistanciaUltra2"
+        },
+        {
+            "path": "projects/ProyectoIntegrador"
+        },
+        {
+            "path": "projects/MedirDistanciaUltraV3"
         }
     ],
     "settings": {
-        "idf.portWin": "COM14",
         "idf.flashBaudRate": "115200",
         "idf.flashType": "JTAG",
         "cmake.configureOnOpen": false,
@@ -89,6 +94,7 @@
             "mpu6050.h": "c",
             "i2c_mcu.h": "c"
         },
+        "idf.port": "COM14",
     },
     "tasks": {
         "version": "2.0.0",
