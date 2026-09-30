@@ -1,0 +1,1913 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Osciloscopio: Referencia del archivo C:/Users/faust/Barbagelata_2C_2026/firmware/drivers/devices/inc/adxl345.h</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Osciloscopio<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('adxl345_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo adxl345.h</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Driver para el acelerometro digital de 3 ejes ADXL345 (Analog Devices) sobre interfaz SPI de 4 hilos, usando la capa HAL <a class="el" href="spi__mcu_8c.html">spi_mcu.c</a>/h.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="spi__mcu_8h_source.html">spi_mcu.h</a>&quot;</code><br />
+</div>
+<p><a href="adxl345_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:adxl345_5Faccel_5Fraw_5Ft" id="r_adxl345_5Faccel_5Fraw_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structadxl345__accel__raw__t.html">adxl345_accel_raw_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Muestra de aceleracion cruda (cuentas, twos complement de 16 bits).  <a href="structadxl345__accel__raw__t.html#details">Más...</a><br /></td></tr>
+<tr class="memitem:adxl345_5Fconfig_5Ft" id="r_adxl345_5Fconfig_5Ft"><td class="memItemLeft">struct &#160;</td><td class="memItemRight"><a class="el" href="structadxl345__config__t.html">adxl345_config_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configuracion de alto nivel para <a class="el" href="#ae76cfb6449ee4c25dc202d523aff29c0" title="Inicializa el bus SPI (via spi_mcu) y el ADXL345: verifica DEVID, configura DATA_FORMAT,...">adxl345_init()</a>.  <a href="structadxl345__config__t.html#details">Más...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a0928397c9e3e1e84b36a672976252b97" id="r_a0928397c9e3e1e84b36a672976252b97"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0928397c9e3e1e84b36a672976252b97">ADXL345_SPI_DEVICE</a>&#160;&#160;&#160;<a class="el" href="group___s_p_i.html#gga919e4040af605e210f6c5f4c6fe13a12aa4b24f86e59b845990862af6481c321f">SPI_1</a></td></tr>
+<tr class="memdesc:a0928397c9e3e1e84b36a672976252b97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dispositivo SPI (CS) al que esta conectado el ADXL345. Ajustar segun el diseno de PCB (SPI_1, SPI_2 o SPI_3 definidos en <a class="el" href="spi__mcu_8h.html">spi_mcu.h</a>).  <br /></td></tr>
+<tr class="memitem:afc4336b02db4457f97336e2138a08f55" id="r_afc4336b02db4457f97336e2138a08f55"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#afc4336b02db4457f97336e2138a08f55">ADXL345_SPI_BITRATE_HZ</a>&#160;&#160;&#160;2000000UL</td></tr>
+<tr class="memdesc:afc4336b02db4457f97336e2138a08f55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Velocidad de reloj SPI. Datasheet: maximo 5 MHz (100 pF de carga). Se usa un valor conservador para mejorar la integridad de senal en cables largos hacia el sensor pegado al cuello del paciente.  <br /></td></tr>
+<tr class="memitem:a47117b91427b95ff46c7f44a9d19f156" id="r_a47117b91427b95ff46c7f44a9d19f156"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a47117b91427b95ff46c7f44a9d19f156">ADXL345_SPI_CLK_MODE</a>&#160;&#160;&#160;3</td></tr>
+<tr class="memdesc:a47117b91427b95ff46c7f44a9d19f156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Modo de reloj SPI requerido por el ADXL345: CPOL = 1, CPHA = 1 (modo 3).  <br /></td></tr>
+<tr class="memitem:acbb34eff02fa8cc0497ce39c7d050cdd" id="r_acbb34eff02fa8cc0497ce39c7d050cdd"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#acbb34eff02fa8cc0497ce39c7d050cdd">ADXL345_READ_BIT</a>&#160;&#160;&#160;0x80U</td></tr>
+<tr class="memitem:a7fce1e2c32d636b947e8381f4eba0b6f" id="r_a7fce1e2c32d636b947e8381f4eba0b6f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a7fce1e2c32d636b947e8381f4eba0b6f">ADXL345_WRITE_BIT</a>&#160;&#160;&#160;0x00U</td></tr>
+<tr class="memitem:a55527994b33b9b0ef20148052eb07cca" id="r_a55527994b33b9b0ef20148052eb07cca"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a55527994b33b9b0ef20148052eb07cca">ADXL345_MULTIBYTE_BIT</a>&#160;&#160;&#160;0x40U</td></tr>
+<tr class="memitem:a29b5a30a1bc0cbaaf3f052eaab713ecb" id="r_a29b5a30a1bc0cbaaf3f052eaab713ecb"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a29b5a30a1bc0cbaaf3f052eaab713ecb">ADXL345_REG_DEVID</a>&#160;&#160;&#160;0x00U</td></tr>
+<tr class="memitem:a4606ede066d6a452645f00652f6f3adc" id="r_a4606ede066d6a452645f00652f6f3adc"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a4606ede066d6a452645f00652f6f3adc">ADXL345_REG_THRESH_TAP</a>&#160;&#160;&#160;0x1DU</td></tr>
+<tr class="memitem:a47ada0987f13abc327791f3b721fc2fa" id="r_a47ada0987f13abc327791f3b721fc2fa"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a47ada0987f13abc327791f3b721fc2fa">ADXL345_REG_OFSX</a>&#160;&#160;&#160;0x1EU</td></tr>
+<tr class="memitem:a9f528be643cec2847192f1866705b570" id="r_a9f528be643cec2847192f1866705b570"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9f528be643cec2847192f1866705b570">ADXL345_REG_OFSY</a>&#160;&#160;&#160;0x1FU</td></tr>
+<tr class="memitem:ae81729318b7fa11a631c4e1031fe7c97" id="r_ae81729318b7fa11a631c4e1031fe7c97"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ae81729318b7fa11a631c4e1031fe7c97">ADXL345_REG_OFSZ</a>&#160;&#160;&#160;0x20U</td></tr>
+<tr class="memitem:a027ffe4ead3047b75f1c15f8ee27acef" id="r_a027ffe4ead3047b75f1c15f8ee27acef"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a027ffe4ead3047b75f1c15f8ee27acef">ADXL345_REG_DUR</a>&#160;&#160;&#160;0x21U</td></tr>
+<tr class="memitem:a7378c1d55a972c54ce6608c1e32336ef" id="r_a7378c1d55a972c54ce6608c1e32336ef"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a7378c1d55a972c54ce6608c1e32336ef">ADXL345_REG_LATENT</a>&#160;&#160;&#160;0x22U</td></tr>
+<tr class="memitem:ab8b04304c7de9e6f1b530418b0b9dddd" id="r_ab8b04304c7de9e6f1b530418b0b9dddd"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ab8b04304c7de9e6f1b530418b0b9dddd">ADXL345_REG_WINDOW</a>&#160;&#160;&#160;0x23U</td></tr>
+<tr class="memitem:aed83f0847d342ebbbe0c3eafeb12dda8" id="r_aed83f0847d342ebbbe0c3eafeb12dda8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aed83f0847d342ebbbe0c3eafeb12dda8">ADXL345_REG_THRESH_ACT</a>&#160;&#160;&#160;0x24U</td></tr>
+<tr class="memitem:a6bd7ad5b22116ad715dd655755d8c129" id="r_a6bd7ad5b22116ad715dd655755d8c129"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a6bd7ad5b22116ad715dd655755d8c129">ADXL345_REG_THRESH_INACT</a>&#160;&#160;&#160;0x25U</td></tr>
+<tr class="memitem:ace645cf273f2c8332d24bb37fea7f725" id="r_ace645cf273f2c8332d24bb37fea7f725"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ace645cf273f2c8332d24bb37fea7f725">ADXL345_REG_TIME_INACT</a>&#160;&#160;&#160;0x26U</td></tr>
+<tr class="memitem:aeade3a2907935b106ffce9c81aedee76" id="r_aeade3a2907935b106ffce9c81aedee76"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aeade3a2907935b106ffce9c81aedee76">ADXL345_REG_ACT_INACT_CTL</a>&#160;&#160;&#160;0x27U</td></tr>
+<tr class="memitem:a0522945d2a7b9a37f7d76e2620234576" id="r_a0522945d2a7b9a37f7d76e2620234576"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0522945d2a7b9a37f7d76e2620234576">ADXL345_REG_THRESH_FF</a>&#160;&#160;&#160;0x28U</td></tr>
+<tr class="memitem:a5abb839b3f7233cb3882e15899399d4c" id="r_a5abb839b3f7233cb3882e15899399d4c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a5abb839b3f7233cb3882e15899399d4c">ADXL345_REG_TIME_FF</a>&#160;&#160;&#160;0x29U</td></tr>
+<tr class="memitem:a07887f474abd214ba8528cd136bc2b60" id="r_a07887f474abd214ba8528cd136bc2b60"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a07887f474abd214ba8528cd136bc2b60">ADXL345_REG_TAP_AXES</a>&#160;&#160;&#160;0x2AU</td></tr>
+<tr class="memitem:a10336666b8b1228d08d4e634817832cc" id="r_a10336666b8b1228d08d4e634817832cc"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a10336666b8b1228d08d4e634817832cc">ADXL345_REG_ACT_TAP_STATUS</a>&#160;&#160;&#160;0x2BU</td></tr>
+<tr class="memitem:a51ce19e9e208c52fb41348c472b428ab" id="r_a51ce19e9e208c52fb41348c472b428ab"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a51ce19e9e208c52fb41348c472b428ab">ADXL345_REG_BW_RATE</a>&#160;&#160;&#160;0x2CU</td></tr>
+<tr class="memitem:aa8b343258a85689467d33fb6e7a92d18" id="r_aa8b343258a85689467d33fb6e7a92d18"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aa8b343258a85689467d33fb6e7a92d18">ADXL345_REG_POWER_CTL</a>&#160;&#160;&#160;0x2DU</td></tr>
+<tr class="memitem:ae54dd63a35ee5baec0ba7bfa8892d005" id="r_ae54dd63a35ee5baec0ba7bfa8892d005"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ae54dd63a35ee5baec0ba7bfa8892d005">ADXL345_REG_INT_ENABLE</a>&#160;&#160;&#160;0x2EU</td></tr>
+<tr class="memitem:a725afaaa7d76f0a2b503a32ab8b4a689" id="r_a725afaaa7d76f0a2b503a32ab8b4a689"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a725afaaa7d76f0a2b503a32ab8b4a689">ADXL345_REG_INT_MAP</a>&#160;&#160;&#160;0x2FU</td></tr>
+<tr class="memitem:aa1a2a197465ce44bf8a2c06acc22c561" id="r_aa1a2a197465ce44bf8a2c06acc22c561"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aa1a2a197465ce44bf8a2c06acc22c561">ADXL345_REG_INT_SOURCE</a>&#160;&#160;&#160;0x30U</td></tr>
+<tr class="memitem:a599ba3e5ed5a1ff931b9b268590a54a3" id="r_a599ba3e5ed5a1ff931b9b268590a54a3"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a599ba3e5ed5a1ff931b9b268590a54a3">ADXL345_REG_DATA_FORMAT</a>&#160;&#160;&#160;0x31U</td></tr>
+<tr class="memitem:ad357e2d6384df108aab1cffc6dc32782" id="r_ad357e2d6384df108aab1cffc6dc32782"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ad357e2d6384df108aab1cffc6dc32782">ADXL345_REG_DATAX0</a>&#160;&#160;&#160;0x32U</td></tr>
+<tr class="memitem:a104644acecc00a82948a4f1f275f18ee" id="r_a104644acecc00a82948a4f1f275f18ee"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a104644acecc00a82948a4f1f275f18ee">ADXL345_REG_DATAX1</a>&#160;&#160;&#160;0x33U</td></tr>
+<tr class="memitem:a5a6c961c3b5573ff25525b47941fd8b9" id="r_a5a6c961c3b5573ff25525b47941fd8b9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a5a6c961c3b5573ff25525b47941fd8b9">ADXL345_REG_DATAY0</a>&#160;&#160;&#160;0x34U</td></tr>
+<tr class="memitem:afc55ed6bd0c938a106b5d08dfec77223" id="r_afc55ed6bd0c938a106b5d08dfec77223"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#afc55ed6bd0c938a106b5d08dfec77223">ADXL345_REG_DATAY1</a>&#160;&#160;&#160;0x35U</td></tr>
+<tr class="memitem:a7e8957c91c0f9992a389968510eb0a75" id="r_a7e8957c91c0f9992a389968510eb0a75"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a7e8957c91c0f9992a389968510eb0a75">ADXL345_REG_DATAZ0</a>&#160;&#160;&#160;0x36U</td></tr>
+<tr class="memitem:aac6575491824aee967461dee85eda6cd" id="r_aac6575491824aee967461dee85eda6cd"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aac6575491824aee967461dee85eda6cd">ADXL345_REG_DATAZ1</a>&#160;&#160;&#160;0x37U</td></tr>
+<tr class="memitem:a69102d04a2a2c3f5de46b503ea22646e" id="r_a69102d04a2a2c3f5de46b503ea22646e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a69102d04a2a2c3f5de46b503ea22646e">ADXL345_REG_FIFO_CTL</a>&#160;&#160;&#160;0x38U</td></tr>
+<tr class="memitem:a9ba8252efafd2b9e9a7257a15062c027" id="r_a9ba8252efafd2b9e9a7257a15062c027"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9ba8252efafd2b9e9a7257a15062c027">ADXL345_REG_FIFO_STATUS</a>&#160;&#160;&#160;0x39U</td></tr>
+<tr class="memitem:a13153989e5793072f63242dee37a7bf0" id="r_a13153989e5793072f63242dee37a7bf0"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a13153989e5793072f63242dee37a7bf0">ADXL345_DEVID_VALUE</a>&#160;&#160;&#160;0xE5U</td></tr>
+<tr class="memdesc:a13153989e5793072f63242dee37a7bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor esperado del registro DEVID (345 en octal = 0xE5).  <br /></td></tr>
+<tr class="memitem:a4ccc4953925003f7a0f845489937e991" id="r_a4ccc4953925003f7a0f845489937e991"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a4ccc4953925003f7a0f845489937e991">ADXL345_POWER_CTL_LINK</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:a7d55201eb0dd3ea839968ada94bba487" id="r_a7d55201eb0dd3ea839968ada94bba487"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a7d55201eb0dd3ea839968ada94bba487">ADXL345_POWER_CTL_AUTO_SLEEP</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:a6897be8c059c143e60d8678d1f893fcf" id="r_a6897be8c059c143e60d8678d1f893fcf"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a6897be8c059c143e60d8678d1f893fcf">ADXL345_POWER_CTL_MEASURE</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:a0fa739b0e0c20273947124b2c562f6f3" id="r_a0fa739b0e0c20273947124b2c562f6f3"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0fa739b0e0c20273947124b2c562f6f3">ADXL345_POWER_CTL_SLEEP</a>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
+<tr class="memitem:aad54a9cb73c3efdeddcad2fd39b86916" id="r_aad54a9cb73c3efdeddcad2fd39b86916"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aad54a9cb73c3efdeddcad2fd39b86916">ADXL345_POWER_CTL_WAKEUP_MASK</a>&#160;&#160;&#160;0x03U</td></tr>
+<tr class="memitem:a0dbd1f11a4f61a98f04c2c3f37749a2e" id="r_a0dbd1f11a4f61a98f04c2c3f37749a2e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0dbd1f11a4f61a98f04c2c3f37749a2e">ADXL345_BW_RATE_LOW_POWER</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:a92dbc39d130913d032571ebf13a5ef14" id="r_a92dbc39d130913d032571ebf13a5ef14"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a92dbc39d130913d032571ebf13a5ef14">ADXL345_BW_RATE_MASK</a>&#160;&#160;&#160;0x0FU</td></tr>
+<tr class="memitem:acecacf6f2e4f19f1d5fe155c2e5bba03" id="r_acecacf6f2e4f19f1d5fe155c2e5bba03"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#acecacf6f2e4f19f1d5fe155c2e5bba03">ADXL345_RATE_800HZ</a>&#160;&#160;&#160;0x0DU</td></tr>
+<tr class="memdesc:acecacf6f2e4f19f1d5fe155c2e5bba03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigos de ODR (Output Data Rate) mas utiles para monitoreo ambulatorio.  <br /></td></tr>
+<tr class="memitem:abf804774858aa46b6d9ad7114a879b8c" id="r_abf804774858aa46b6d9ad7114a879b8c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#abf804774858aa46b6d9ad7114a879b8c">ADXL345_RATE_400HZ</a>&#160;&#160;&#160;0x0CU</td></tr>
+<tr class="memitem:a442d29fae69da691268c3fcb883d5ec5" id="r_a442d29fae69da691268c3fcb883d5ec5"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a442d29fae69da691268c3fcb883d5ec5">ADXL345_RATE_200HZ</a>&#160;&#160;&#160;0x0BU</td></tr>
+<tr class="memitem:a94b290274d7dc9b983c40f7eb8c00b96" id="r_a94b290274d7dc9b983c40f7eb8c00b96"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a94b290274d7dc9b983c40f7eb8c00b96">ADXL345_RATE_100HZ</a>&#160;&#160;&#160;0x0AU</td></tr>
+<tr class="memitem:afad1f9a2716b7f2f1225e86569da64c7" id="r_afad1f9a2716b7f2f1225e86569da64c7"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#afad1f9a2716b7f2f1225e86569da64c7">ADXL345_RATE_50HZ</a>&#160;&#160;&#160;0x09U</td></tr>
+<tr class="memitem:a478fcf3bd3f85630728027378bfe8f69" id="r_a478fcf3bd3f85630728027378bfe8f69"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a478fcf3bd3f85630728027378bfe8f69">ADXL345_RATE_25HZ</a>&#160;&#160;&#160;0x08U</td></tr>
+<tr class="memitem:a7d2e47fa28a3aef30df1188ef3044644" id="r_a7d2e47fa28a3aef30df1188ef3044644"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a7d2e47fa28a3aef30df1188ef3044644">ADXL345_RATE_12_5HZ</a>&#160;&#160;&#160;0x07U</td></tr>
+<tr class="memitem:a1e90e1be9a97effdbf0a1dc0f1d720a2" id="r_a1e90e1be9a97effdbf0a1dc0f1d720a2"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a1e90e1be9a97effdbf0a1dc0f1d720a2">ADXL345_RATE_6_25HZ</a>&#160;&#160;&#160;0x06U</td></tr>
+<tr class="memitem:aa9660f6fe6bf26e1c626ba5bf75a82b2" id="r_aa9660f6fe6bf26e1c626ba5bf75a82b2"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aa9660f6fe6bf26e1c626ba5bf75a82b2">ADXL345_RATE_3_13HZ</a>&#160;&#160;&#160;0x05U</td></tr>
+<tr class="memitem:aab1e5d2024949c5243c1d8979e3d641f" id="r_aab1e5d2024949c5243c1d8979e3d641f"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aab1e5d2024949c5243c1d8979e3d641f">ADXL345_RATE_1_56HZ</a>&#160;&#160;&#160;0x04U</td></tr>
+<tr class="memitem:a9ca83f6f44ee63fdec3f479ff315c6aa" id="r_a9ca83f6f44ee63fdec3f479ff315c6aa"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9ca83f6f44ee63fdec3f479ff315c6aa">ADXL345_DATA_FORMAT_SELF_TEST</a>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
+<tr class="memitem:a4750b1cbb98293a78cf156c4bc2a90e9" id="r_a4750b1cbb98293a78cf156c4bc2a90e9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a4750b1cbb98293a78cf156c4bc2a90e9">ADXL345_DATA_FORMAT_SPI_3WIRE</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a88f6d44cf8d56e251c09931c87a71188" id="r_a88f6d44cf8d56e251c09931c87a71188"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a88f6d44cf8d56e251c09931c87a71188">ADXL345_DATA_FORMAT_INT_INVERT</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:a9fa3e80839409829b8aa5054114fe1a3" id="r_a9fa3e80839409829b8aa5054114fe1a3"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9fa3e80839409829b8aa5054114fe1a3">ADXL345_DATA_FORMAT_FULL_RES</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:acf4dd5dcb9959963758a32c006f58b3d" id="r_acf4dd5dcb9959963758a32c006f58b3d"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#acf4dd5dcb9959963758a32c006f58b3d">ADXL345_DATA_FORMAT_JUSTIFY</a>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
+<tr class="memitem:afa89d0888b9e734ad7f992dec25c1fa7" id="r_afa89d0888b9e734ad7f992dec25c1fa7"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#afa89d0888b9e734ad7f992dec25c1fa7">ADXL345_RANGE_2G</a>&#160;&#160;&#160;0x00U</td></tr>
+<tr class="memitem:a5e66e140e085d6e8fdc98ce7f8b87290" id="r_a5e66e140e085d6e8fdc98ce7f8b87290"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a5e66e140e085d6e8fdc98ce7f8b87290">ADXL345_RANGE_4G</a>&#160;&#160;&#160;0x01U</td></tr>
+<tr class="memitem:a1b3f9e470894f3452c818c3167076be6" id="r_a1b3f9e470894f3452c818c3167076be6"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a1b3f9e470894f3452c818c3167076be6">ADXL345_RANGE_8G</a>&#160;&#160;&#160;0x02U</td></tr>
+<tr class="memitem:a8cb06ef9eec9ffa9a68ea76ac50bda7c" id="r_a8cb06ef9eec9ffa9a68ea76ac50bda7c"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a8cb06ef9eec9ffa9a68ea76ac50bda7c">ADXL345_RANGE_16G</a>&#160;&#160;&#160;0x03U</td></tr>
+<tr class="memitem:a0ac5187c40bdd0cdc3f96ea43836fac0" id="r_a0ac5187c40bdd0cdc3f96ea43836fac0"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0ac5187c40bdd0cdc3f96ea43836fac0">ADXL345_RANGE_MASK</a>&#160;&#160;&#160;0x03U</td></tr>
+<tr class="memitem:a70a71dca8246caa3f2fe6cfe07b0a8d9" id="r_a70a71dca8246caa3f2fe6cfe07b0a8d9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a70a71dca8246caa3f2fe6cfe07b0a8d9">ADXL345_FIFO_MODE_BYPASS</a>&#160;&#160;&#160;0x00U</td></tr>
+<tr class="memitem:ac2768550e81873510d0ea45e8dcf490e" id="r_ac2768550e81873510d0ea45e8dcf490e"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ac2768550e81873510d0ea45e8dcf490e">ADXL345_FIFO_MODE_FIFO</a>&#160;&#160;&#160;0x40U</td></tr>
+<tr class="memitem:ac047d58ac4a12bba64e6ca0339146ea4" id="r_ac047d58ac4a12bba64e6ca0339146ea4"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ac047d58ac4a12bba64e6ca0339146ea4">ADXL345_FIFO_MODE_STREAM</a>&#160;&#160;&#160;0x80U</td></tr>
+<tr class="memitem:a466a17ae8884375c5d1d5f16c2032431" id="r_a466a17ae8884375c5d1d5f16c2032431"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a466a17ae8884375c5d1d5f16c2032431">ADXL345_FIFO_MODE_TRIGGER</a>&#160;&#160;&#160;0xC0U</td></tr>
+<tr class="memitem:a0628a9ef8cb6ed4c13dfb40283370267" id="r_a0628a9ef8cb6ed4c13dfb40283370267"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a0628a9ef8cb6ed4c13dfb40283370267">ADXL345_FIFO_MODE_MASK</a>&#160;&#160;&#160;0xC0U</td></tr>
+<tr class="memitem:a00732f9652947cfa09a5c1953d9a2908" id="r_a00732f9652947cfa09a5c1953d9a2908"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a00732f9652947cfa09a5c1953d9a2908">ADXL345_FIFO_TRIGGER_BIT</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:af3279475284b1691a3fdffc39abee0be" id="r_af3279475284b1691a3fdffc39abee0be"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#af3279475284b1691a3fdffc39abee0be">ADXL345_FIFO_SAMPLES_MASK</a>&#160;&#160;&#160;0x1FU</td></tr>
+<tr class="memitem:a9b09a9941cc150476e04b89544c0d747" id="r_a9b09a9941cc150476e04b89544c0d747"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a9b09a9941cc150476e04b89544c0d747">ADXL345_INT_DATA_READY</a>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
+<tr class="memitem:af177e7ff17c7e262c54cc8f4c0341bfa" id="r_af177e7ff17c7e262c54cc8f4c0341bfa"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#af177e7ff17c7e262c54cc8f4c0341bfa">ADXL345_INT_SINGLE_TAP</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a67199fa9360afc8247a8a4da3951f122" id="r_a67199fa9360afc8247a8a4da3951f122"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a67199fa9360afc8247a8a4da3951f122">ADXL345_INT_DOUBLE_TAP</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:aadc9bf111599cf9e4279e054d0cdb0a9" id="r_aadc9bf111599cf9e4279e054d0cdb0a9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aadc9bf111599cf9e4279e054d0cdb0a9">ADXL345_INT_ACTIVITY</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:a24383976d6f1d338f006bca00f7f0d12" id="r_a24383976d6f1d338f006bca00f7f0d12"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a24383976d6f1d338f006bca00f7f0d12">ADXL345_INT_INACTIVITY</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:a48fc5eaa2ce6354ec8fe3a6a07b408d9" id="r_a48fc5eaa2ce6354ec8fe3a6a07b408d9"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a48fc5eaa2ce6354ec8fe3a6a07b408d9">ADXL345_INT_FREE_FALL</a>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
+<tr class="memitem:a7274b59cca3faaa1cb498bda49b781c8" id="r_a7274b59cca3faaa1cb498bda49b781c8"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a7274b59cca3faaa1cb498bda49b781c8">ADXL345_INT_WATERMARK</a>&#160;&#160;&#160;(1U &lt;&lt; 1)</td></tr>
+<tr class="memitem:a664e61abd428aed5bc694a3b7158d0f7" id="r_a664e61abd428aed5bc694a3b7158d0f7"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a664e61abd428aed5bc694a3b7158d0f7">ADXL345_INT_OVERRUN</a>&#160;&#160;&#160;(1U &lt;&lt; 0)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a6dab48b5ab19b85f0b50ffd457b5b1b0" id="r_a6dab48b5ab19b85f0b50ffd457b5b1b0"><td class="memItemLeft">enum &#160;</td><td class="memItemRight"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> { <a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0a5bc4a5e95d97714f8bd6d49148043731">ADXL345_OK</a> = 0
+, <a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0a1181e5c4ad7e9b218a24186db5ef4240">ADXL345_ERROR_SPI</a>
+, <a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0afa2b3adf4a5aa5674eaac4801982e887">ADXL345_ERROR_DEVID</a>
+ }</td></tr>
+<tr class="memdesc:a6dab48b5ab19b85f0b50ffd457b5b1b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Codigos de retorno del driver.  <a href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">Más...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ae76cfb6449ee4c25dc202d523aff29c0" id="r_ae76cfb6449ee4c25dc202d523aff29c0"><td class="memItemLeft"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae76cfb6449ee4c25dc202d523aff29c0">adxl345_init</a> (const <a class="el" href="structadxl345__config__t.html">adxl345_config_t</a> *config)</td></tr>
+<tr class="memdesc:ae76cfb6449ee4c25dc202d523aff29c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el bus SPI (via spi_mcu) y el ADXL345: verifica DEVID, configura DATA_FORMAT, BW_RATE, FIFO (opcional) y entra en modo medicion.  <br /></td></tr>
+<tr class="memitem:ac64d93d2b3fa7055a0ef79096aa872a0" id="r_ac64d93d2b3fa7055a0ef79096aa872a0"><td class="memItemLeft"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac64d93d2b3fa7055a0ef79096aa872a0">adxl345_write_register</a> (uint8_t reg, uint8_t value)</td></tr>
+<tr class="memdesc:ac64d93d2b3fa7055a0ef79096aa872a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribe un unico registro del ADXL345.  <br /></td></tr>
+<tr class="memitem:a57b5c1606c416938562ca52858260e7f" id="r_a57b5c1606c416938562ca52858260e7f"><td class="memItemLeft"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a57b5c1606c416938562ca52858260e7f">adxl345_read_registers</a> (uint8_t reg, uint8_t *rx_buf, uint8_t length)</td></tr>
+<tr class="memdesc:a57b5c1606c416938562ca52858260e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee uno o mas registros consecutivos del ADXL345 (lectura en rafaga).  <br /></td></tr>
+<tr class="memitem:a2213013aec58834c71da8dfb609c6231" id="r_a2213013aec58834c71da8dfb609c6231"><td class="memItemLeft"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2213013aec58834c71da8dfb609c6231">adxl345_read_accel</a> (<a class="el" href="structadxl345__accel__raw__t.html">adxl345_accel_raw_t</a> *out)</td></tr>
+<tr class="memdesc:a2213013aec58834c71da8dfb609c6231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee una muestra de aceleracion (X, Y, Z) mediante burst read de 6 bytes desde DATAX0. Si el FIFO esta habilitado, esto extrae la muestra mas antigua disponible.  <br /></td></tr>
+<tr class="memitem:acaa7c94bbe85c988f061abb4654e7ab0" id="r_acaa7c94bbe85c988f061abb4654e7ab0"><td class="memItemLeft">int32_t&#160;</td><td class="memItemRight"><a class="el" href="#acaa7c94bbe85c988f061abb4654e7ab0">adxl345_raw_to_mg</a> (int16_t raw, bool full_resolution, uint8_t range)</td></tr>
+<tr class="memdesc:acaa7c94bbe85c988f061abb4654e7ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convierte una lectura cruda a mili-g, segun el rango y modo de resolucion configurados.  <br /></td></tr>
+<tr class="memitem:ace658ce86e9a3f55de4a51a3c45c07a3" id="r_ace658ce86e9a3f55de4a51a3c45c07a3"><td class="memItemLeft"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ace658ce86e9a3f55de4a51a3c45c07a3">adxl345_get_fifo_entries</a> (uint8_t *entries)</td></tr>
+<tr class="memdesc:ace658ce86e9a3f55de4a51a3c45c07a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la cantidad de muestras actualmente almacenadas en el FIFO.  <br /></td></tr>
+<tr class="memitem:a059ed7986b5a373642ccf1f0d1ea13ef" id="r_a059ed7986b5a373642ccf1f0d1ea13ef"><td class="memItemLeft"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a059ed7986b5a373642ccf1f0d1ea13ef">adxl345_standby</a> (void)</td></tr>
+<tr class="memdesc:a059ed7986b5a373642ccf1f0d1ea13ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pone al sensor en modo standby (bajo consumo, 0.1 uA tipico), conservando el contenido del FIFO. Util para pausar el registro sin perder configuracion.  <br /></td></tr>
+<tr class="memitem:ac4e75eeee2c00216f4deaf8701d5c91c" id="r_ac4e75eeee2c00216f4deaf8701d5c91c"><td class="memItemLeft"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac4e75eeee2c00216f4deaf8701d5c91c">adxl345_wakeup</a> (void)</td></tr>
+<tr class="memdesc:ac4e75eeee2c00216f4deaf8701d5c91c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vuelve a modo medicion luego de un <a class="el" href="#a059ed7986b5a373642ccf1f0d1ea13ef" title="Pone al sensor en modo standby (bajo consumo, 0.1 uA tipico), conservando el contenido del FIFO....">adxl345_standby()</a>.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Driver para el acelerometro digital de 3 ejes ADXL345 (Analog Devices) sobre interfaz SPI de 4 hilos, usando la capa HAL <a class="el" href="spi__mcu_8c.html">spi_mcu.c</a>/h. </p>
+<p>Pensado para un monitor ambulatorio de flujo glotico (uso continuo de varios dias con bateria). Se priorizan lecturas en rafaga (burst), uso de FIFO y modos de baja potencia para minimizar transacciones SPI y consumo de energia.</p>
+<p>Referencia: ADXL345 Data Sheet Rev. D (Analog Devices). </p>
+
+<p class="definition">Definición en el archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a0dbd1f11a4f61a98f04c2c3f37749a2e" name="a0dbd1f11a4f61a98f04c2c3f37749a2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dbd1f11a4f61a98f04c2c3f37749a2e">&#9670;&#160;</a></span>ADXL345_BW_RATE_LOW_POWER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_BW_RATE_LOW_POWER&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00092">92</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a92dbc39d130913d032571ebf13a5ef14" name="a92dbc39d130913d032571ebf13a5ef14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92dbc39d130913d032571ebf13a5ef14">&#9670;&#160;</a></span>ADXL345_BW_RATE_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_BW_RATE_MASK&#160;&#160;&#160;0x0FU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00093">93</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a9fa3e80839409829b8aa5054114fe1a3" name="a9fa3e80839409829b8aa5054114fe1a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fa3e80839409829b8aa5054114fe1a3">&#9670;&#160;</a></span>ADXL345_DATA_FORMAT_FULL_RES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_DATA_FORMAT_FULL_RES&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00111">111</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a88f6d44cf8d56e251c09931c87a71188" name="a88f6d44cf8d56e251c09931c87a71188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88f6d44cf8d56e251c09931c87a71188">&#9670;&#160;</a></span>ADXL345_DATA_FORMAT_INT_INVERT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_DATA_FORMAT_INT_INVERT&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00110">110</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="acf4dd5dcb9959963758a32c006f58b3d" name="acf4dd5dcb9959963758a32c006f58b3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf4dd5dcb9959963758a32c006f58b3d">&#9670;&#160;</a></span>ADXL345_DATA_FORMAT_JUSTIFY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_DATA_FORMAT_JUSTIFY&#160;&#160;&#160;(1U &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>1 = MSB justificado, 0 = LSB con signo </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00112">112</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a9ca83f6f44ee63fdec3f479ff315c6aa" name="a9ca83f6f44ee63fdec3f479ff315c6aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ca83f6f44ee63fdec3f479ff315c6aa">&#9670;&#160;</a></span>ADXL345_DATA_FORMAT_SELF_TEST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_DATA_FORMAT_SELF_TEST&#160;&#160;&#160;(1U &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00108">108</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a4750b1cbb98293a78cf156c4bc2a90e9" name="a4750b1cbb98293a78cf156c4bc2a90e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4750b1cbb98293a78cf156c4bc2a90e9">&#9670;&#160;</a></span>ADXL345_DATA_FORMAT_SPI_3WIRE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_DATA_FORMAT_SPI_3WIRE&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>1 = 3 hilos, 0 = 4 hilos </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00109">109</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a13153989e5793072f63242dee37a7bf0" name="a13153989e5793072f63242dee37a7bf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13153989e5793072f63242dee37a7bf0">&#9670;&#160;</a></span>ADXL345_DEVID_VALUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_DEVID_VALUE&#160;&#160;&#160;0xE5U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valor esperado del registro DEVID (345 en octal = 0xE5). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00082">82</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a70a71dca8246caa3f2fe6cfe07b0a8d9" name="a70a71dca8246caa3f2fe6cfe07b0a8d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70a71dca8246caa3f2fe6cfe07b0a8d9">&#9670;&#160;</a></span>ADXL345_FIFO_MODE_BYPASS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_FIFO_MODE_BYPASS&#160;&#160;&#160;0x00U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00121">121</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="ac2768550e81873510d0ea45e8dcf490e" name="ac2768550e81873510d0ea45e8dcf490e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2768550e81873510d0ea45e8dcf490e">&#9670;&#160;</a></span>ADXL345_FIFO_MODE_FIFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_FIFO_MODE_FIFO&#160;&#160;&#160;0x40U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00122">122</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a0628a9ef8cb6ed4c13dfb40283370267" name="a0628a9ef8cb6ed4c13dfb40283370267"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0628a9ef8cb6ed4c13dfb40283370267">&#9670;&#160;</a></span>ADXL345_FIFO_MODE_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_FIFO_MODE_MASK&#160;&#160;&#160;0xC0U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00125">125</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="ac047d58ac4a12bba64e6ca0339146ea4" name="ac047d58ac4a12bba64e6ca0339146ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac047d58ac4a12bba64e6ca0339146ea4">&#9670;&#160;</a></span>ADXL345_FIFO_MODE_STREAM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_FIFO_MODE_STREAM&#160;&#160;&#160;0x80U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00123">123</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a466a17ae8884375c5d1d5f16c2032431" name="a466a17ae8884375c5d1d5f16c2032431"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a466a17ae8884375c5d1d5f16c2032431">&#9670;&#160;</a></span>ADXL345_FIFO_MODE_TRIGGER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_FIFO_MODE_TRIGGER&#160;&#160;&#160;0xC0U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00124">124</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="af3279475284b1691a3fdffc39abee0be" name="af3279475284b1691a3fdffc39abee0be"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af3279475284b1691a3fdffc39abee0be">&#9670;&#160;</a></span>ADXL345_FIFO_SAMPLES_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_FIFO_SAMPLES_MASK&#160;&#160;&#160;0x1FU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>0..31 muestras de watermark </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00127">127</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a00732f9652947cfa09a5c1953d9a2908" name="a00732f9652947cfa09a5c1953d9a2908"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00732f9652947cfa09a5c1953d9a2908">&#9670;&#160;</a></span>ADXL345_FIFO_TRIGGER_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_FIFO_TRIGGER_BIT&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00126">126</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="aadc9bf111599cf9e4279e054d0cdb0a9" name="aadc9bf111599cf9e4279e054d0cdb0a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadc9bf111599cf9e4279e054d0cdb0a9">&#9670;&#160;</a></span>ADXL345_INT_ACTIVITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_INT_ACTIVITY&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00133">133</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b09a9941cc150476e04b89544c0d747" name="a9b09a9941cc150476e04b89544c0d747"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b09a9941cc150476e04b89544c0d747">&#9670;&#160;</a></span>ADXL345_INT_DATA_READY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_INT_DATA_READY&#160;&#160;&#160;(1U &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00130">130</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a67199fa9360afc8247a8a4da3951f122" name="a67199fa9360afc8247a8a4da3951f122"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a67199fa9360afc8247a8a4da3951f122">&#9670;&#160;</a></span>ADXL345_INT_DOUBLE_TAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_INT_DOUBLE_TAP&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00132">132</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a48fc5eaa2ce6354ec8fe3a6a07b408d9" name="a48fc5eaa2ce6354ec8fe3a6a07b408d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a48fc5eaa2ce6354ec8fe3a6a07b408d9">&#9670;&#160;</a></span>ADXL345_INT_FREE_FALL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_INT_FREE_FALL&#160;&#160;&#160;(1U &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00135">135</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a24383976d6f1d338f006bca00f7f0d12" name="a24383976d6f1d338f006bca00f7f0d12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24383976d6f1d338f006bca00f7f0d12">&#9670;&#160;</a></span>ADXL345_INT_INACTIVITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_INT_INACTIVITY&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00134">134</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a664e61abd428aed5bc694a3b7158d0f7" name="a664e61abd428aed5bc694a3b7158d0f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a664e61abd428aed5bc694a3b7158d0f7">&#9670;&#160;</a></span>ADXL345_INT_OVERRUN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_INT_OVERRUN&#160;&#160;&#160;(1U &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00137">137</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="af177e7ff17c7e262c54cc8f4c0341bfa" name="af177e7ff17c7e262c54cc8f4c0341bfa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af177e7ff17c7e262c54cc8f4c0341bfa">&#9670;&#160;</a></span>ADXL345_INT_SINGLE_TAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_INT_SINGLE_TAP&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00131">131</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a7274b59cca3faaa1cb498bda49b781c8" name="a7274b59cca3faaa1cb498bda49b781c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7274b59cca3faaa1cb498bda49b781c8">&#9670;&#160;</a></span>ADXL345_INT_WATERMARK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_INT_WATERMARK&#160;&#160;&#160;(1U &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00136">136</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a55527994b33b9b0ef20148052eb07cca" name="a55527994b33b9b0ef20148052eb07cca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55527994b33b9b0ef20148052eb07cca">&#9670;&#160;</a></span>ADXL345_MULTIBYTE_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_MULTIBYTE_BIT&#160;&#160;&#160;0x40U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bit MB: habilita lectura/escritura en rafaga </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00046">46</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00081">adxl345_read_registers()</a>.</p>
+
+</div>
+</div>
+<a id="a7d55201eb0dd3ea839968ada94bba487" name="a7d55201eb0dd3ea839968ada94bba487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d55201eb0dd3ea839968ada94bba487">&#9670;&#160;</a></span>ADXL345_POWER_CTL_AUTO_SLEEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_POWER_CTL_AUTO_SLEEP&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00086">86</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a4ccc4953925003f7a0f845489937e991" name="a4ccc4953925003f7a0f845489937e991"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ccc4953925003f7a0f845489937e991">&#9670;&#160;</a></span>ADXL345_POWER_CTL_LINK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_POWER_CTL_LINK&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00085">85</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a6897be8c059c143e60d8678d1f893fcf" name="a6897be8c059c143e60d8678d1f893fcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6897be8c059c143e60d8678d1f893fcf">&#9670;&#160;</a></span>ADXL345_POWER_CTL_MEASURE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_POWER_CTL_MEASURE&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00087">87</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a> y <a class="el" href="adxl345_8c_source.html#l00254">adxl345_wakeup()</a>.</p>
+
+</div>
+</div>
+<a id="a0fa739b0e0c20273947124b2c562f6f3" name="a0fa739b0e0c20273947124b2c562f6f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fa739b0e0c20273947124b2c562f6f3">&#9670;&#160;</a></span>ADXL345_POWER_CTL_SLEEP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_POWER_CTL_SLEEP&#160;&#160;&#160;(1U &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00088">88</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="aad54a9cb73c3efdeddcad2fd39b86916" name="aad54a9cb73c3efdeddcad2fd39b86916"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad54a9cb73c3efdeddcad2fd39b86916">&#9670;&#160;</a></span>ADXL345_POWER_CTL_WAKEUP_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_POWER_CTL_WAKEUP_MASK&#160;&#160;&#160;0x03U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>00=8Hz 01=4Hz 10=2Hz 11=1Hz en sleep mode </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00089">89</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a8cb06ef9eec9ffa9a68ea76ac50bda7c" name="a8cb06ef9eec9ffa9a68ea76ac50bda7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb06ef9eec9ffa9a68ea76ac50bda7c">&#9670;&#160;</a></span>ADXL345_RANGE_16G</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RANGE_16G&#160;&#160;&#160;0x03U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00117">117</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00212">adxl345_raw_to_mg()</a>.</p>
+
+</div>
+</div>
+<a id="afa89d0888b9e734ad7f992dec25c1fa7" name="afa89d0888b9e734ad7f992dec25c1fa7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa89d0888b9e734ad7f992dec25c1fa7">&#9670;&#160;</a></span>ADXL345_RANGE_2G</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RANGE_2G&#160;&#160;&#160;0x00U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00114">114</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00212">adxl345_raw_to_mg()</a>.</p>
+
+</div>
+</div>
+<a id="a5e66e140e085d6e8fdc98ce7f8b87290" name="a5e66e140e085d6e8fdc98ce7f8b87290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e66e140e085d6e8fdc98ce7f8b87290">&#9670;&#160;</a></span>ADXL345_RANGE_4G</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RANGE_4G&#160;&#160;&#160;0x01U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00115">115</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00212">adxl345_raw_to_mg()</a>.</p>
+
+</div>
+</div>
+<a id="a1b3f9e470894f3452c818c3167076be6" name="a1b3f9e470894f3452c818c3167076be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b3f9e470894f3452c818c3167076be6">&#9670;&#160;</a></span>ADXL345_RANGE_8G</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RANGE_8G&#160;&#160;&#160;0x02U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00116">116</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00212">adxl345_raw_to_mg()</a>.</p>
+
+</div>
+</div>
+<a id="a0ac5187c40bdd0cdc3f96ea43836fac0" name="a0ac5187c40bdd0cdc3f96ea43836fac0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ac5187c40bdd0cdc3f96ea43836fac0">&#9670;&#160;</a></span>ADXL345_RANGE_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RANGE_MASK&#160;&#160;&#160;0x03U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00118">118</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a> y <a class="el" href="adxl345_8c_source.html#l00212">adxl345_raw_to_mg()</a>.</p>
+
+</div>
+</div>
+<a id="a94b290274d7dc9b983c40f7eb8c00b96" name="a94b290274d7dc9b983c40f7eb8c00b96"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b290274d7dc9b983c40f7eb8c00b96">&#9670;&#160;</a></span>ADXL345_RATE_100HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_100HZ&#160;&#160;&#160;0x0AU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Valor por defecto de fabrica </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00099">99</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a7d2e47fa28a3aef30df1188ef3044644" name="a7d2e47fa28a3aef30df1188ef3044644"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d2e47fa28a3aef30df1188ef3044644">&#9670;&#160;</a></span>ADXL345_RATE_12_5HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_12_5HZ&#160;&#160;&#160;0x07U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00102">102</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="aab1e5d2024949c5243c1d8979e3d641f" name="aab1e5d2024949c5243c1d8979e3d641f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab1e5d2024949c5243c1d8979e3d641f">&#9670;&#160;</a></span>ADXL345_RATE_1_56HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_1_56HZ&#160;&#160;&#160;0x04U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00105">105</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a442d29fae69da691268c3fcb883d5ec5" name="a442d29fae69da691268c3fcb883d5ec5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a442d29fae69da691268c3fcb883d5ec5">&#9670;&#160;</a></span>ADXL345_RATE_200HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_200HZ&#160;&#160;&#160;0x0BU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00098">98</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a478fcf3bd3f85630728027378bfe8f69" name="a478fcf3bd3f85630728027378bfe8f69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a478fcf3bd3f85630728027378bfe8f69">&#9670;&#160;</a></span>ADXL345_RATE_25HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_25HZ&#160;&#160;&#160;0x08U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00101">101</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="aa9660f6fe6bf26e1c626ba5bf75a82b2" name="aa9660f6fe6bf26e1c626ba5bf75a82b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9660f6fe6bf26e1c626ba5bf75a82b2">&#9670;&#160;</a></span>ADXL345_RATE_3_13HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_3_13HZ&#160;&#160;&#160;0x05U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00104">104</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="abf804774858aa46b6d9ad7114a879b8c" name="abf804774858aa46b6d9ad7114a879b8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf804774858aa46b6d9ad7114a879b8c">&#9670;&#160;</a></span>ADXL345_RATE_400HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_400HZ&#160;&#160;&#160;0x0CU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00097">97</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="afad1f9a2716b7f2f1225e86569da64c7" name="afad1f9a2716b7f2f1225e86569da64c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afad1f9a2716b7f2f1225e86569da64c7">&#9670;&#160;</a></span>ADXL345_RATE_50HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_50HZ&#160;&#160;&#160;0x09U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00100">100</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a1e90e1be9a97effdbf0a1dc0f1d720a2" name="a1e90e1be9a97effdbf0a1dc0f1d720a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e90e1be9a97effdbf0a1dc0f1d720a2">&#9670;&#160;</a></span>ADXL345_RATE_6_25HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_6_25HZ&#160;&#160;&#160;0x06U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00103">103</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="acecacf6f2e4f19f1d5fe155c2e5bba03" name="acecacf6f2e4f19f1d5fe155c2e5bba03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acecacf6f2e4f19f1d5fe155c2e5bba03">&#9670;&#160;</a></span>ADXL345_RATE_800HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_RATE_800HZ&#160;&#160;&#160;0x0DU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigos de ODR (Output Data Rate) mas utiles para monitoreo ambulatorio. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00096">96</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="acbb34eff02fa8cc0497ce39c7d050cdd" name="acbb34eff02fa8cc0497ce39c7d050cdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acbb34eff02fa8cc0497ce39c7d050cdd">&#9670;&#160;</a></span>ADXL345_READ_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_READ_BIT&#160;&#160;&#160;0x80U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bit R/W: 1 = lectura </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00044">44</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00081">adxl345_read_registers()</a>.</p>
+
+</div>
+</div>
+<a id="aeade3a2907935b106ffce9c81aedee76" name="aeade3a2907935b106ffce9c81aedee76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeade3a2907935b106ffce9c81aedee76">&#9670;&#160;</a></span>ADXL345_REG_ACT_INACT_CTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_ACT_INACT_CTL&#160;&#160;&#160;0x27U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Control de ejes para act/inact </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00061">61</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a10336666b8b1228d08d4e634817832cc" name="a10336666b8b1228d08d4e634817832cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10336666b8b1228d08d4e634817832cc">&#9670;&#160;</a></span>ADXL345_REG_ACT_TAP_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_ACT_TAP_STATUS&#160;&#160;&#160;0x2BU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Estado de fuente de tap/actividad (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00065">65</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a51ce19e9e208c52fb41348c472b428ab" name="a51ce19e9e208c52fb41348c472b428ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51ce19e9e208c52fb41348c472b428ab">&#9670;&#160;</a></span>ADXL345_REG_BW_RATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_BW_RATE&#160;&#160;&#160;0x2CU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Data rate y modo de potencia </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00066">66</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a599ba3e5ed5a1ff931b9b268590a54a3" name="a599ba3e5ed5a1ff931b9b268590a54a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a599ba3e5ed5a1ff931b9b268590a54a3">&#9670;&#160;</a></span>ADXL345_REG_DATA_FORMAT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_DATA_FORMAT&#160;&#160;&#160;0x31U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Formato de datos de salida </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00071">71</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="ad357e2d6384df108aab1cffc6dc32782" name="ad357e2d6384df108aab1cffc6dc32782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad357e2d6384df108aab1cffc6dc32782">&#9670;&#160;</a></span>ADXL345_REG_DATAX0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_DATAX0&#160;&#160;&#160;0x32U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>X LSB (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00072">72</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00188">adxl345_read_accel()</a>.</p>
+
+</div>
+</div>
+<a id="a104644acecc00a82948a4f1f275f18ee" name="a104644acecc00a82948a4f1f275f18ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a104644acecc00a82948a4f1f275f18ee">&#9670;&#160;</a></span>ADXL345_REG_DATAX1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_DATAX1&#160;&#160;&#160;0x33U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>X MSB (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00073">73</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a5a6c961c3b5573ff25525b47941fd8b9" name="a5a6c961c3b5573ff25525b47941fd8b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a6c961c3b5573ff25525b47941fd8b9">&#9670;&#160;</a></span>ADXL345_REG_DATAY0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_DATAY0&#160;&#160;&#160;0x34U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Y LSB (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00074">74</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="afc55ed6bd0c938a106b5d08dfec77223" name="afc55ed6bd0c938a106b5d08dfec77223"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc55ed6bd0c938a106b5d08dfec77223">&#9670;&#160;</a></span>ADXL345_REG_DATAY1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_DATAY1&#160;&#160;&#160;0x35U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Y MSB (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00075">75</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a7e8957c91c0f9992a389968510eb0a75" name="a7e8957c91c0f9992a389968510eb0a75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e8957c91c0f9992a389968510eb0a75">&#9670;&#160;</a></span>ADXL345_REG_DATAZ0</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_DATAZ0&#160;&#160;&#160;0x36U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Z LSB (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00076">76</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="aac6575491824aee967461dee85eda6cd" name="aac6575491824aee967461dee85eda6cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac6575491824aee967461dee85eda6cd">&#9670;&#160;</a></span>ADXL345_REG_DATAZ1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_DATAZ1&#160;&#160;&#160;0x37U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Z MSB (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00077">77</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a29b5a30a1bc0cbaaf3f052eaab713ecb" name="a29b5a30a1bc0cbaaf3f052eaab713ecb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29b5a30a1bc0cbaaf3f052eaab713ecb">&#9670;&#160;</a></span>ADXL345_REG_DEVID</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_DEVID&#160;&#160;&#160;0x00U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>ID de dispositivo (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00050">50</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a027ffe4ead3047b75f1c15f8ee27acef" name="a027ffe4ead3047b75f1c15f8ee27acef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a027ffe4ead3047b75f1c15f8ee27acef">&#9670;&#160;</a></span>ADXL345_REG_DUR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_DUR&#160;&#160;&#160;0x21U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Duracion maxima de tap </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00055">55</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a69102d04a2a2c3f5de46b503ea22646e" name="a69102d04a2a2c3f5de46b503ea22646e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69102d04a2a2c3f5de46b503ea22646e">&#9670;&#160;</a></span>ADXL345_REG_FIFO_CTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_FIFO_CTL&#160;&#160;&#160;0x38U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Control de FIFO </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00078">78</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a9ba8252efafd2b9e9a7257a15062c027" name="a9ba8252efafd2b9e9a7257a15062c027"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ba8252efafd2b9e9a7257a15062c027">&#9670;&#160;</a></span>ADXL345_REG_FIFO_STATUS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_FIFO_STATUS&#160;&#160;&#160;0x39U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Estado de FIFO (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00079">79</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00230">adxl345_get_fifo_entries()</a>.</p>
+
+</div>
+</div>
+<a id="ae54dd63a35ee5baec0ba7bfa8892d005" name="ae54dd63a35ee5baec0ba7bfa8892d005"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae54dd63a35ee5baec0ba7bfa8892d005">&#9670;&#160;</a></span>ADXL345_REG_INT_ENABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_INT_ENABLE&#160;&#160;&#160;0x2EU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Habilitacion de interrupciones </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00068">68</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="a725afaaa7d76f0a2b503a32ab8b4a689" name="a725afaaa7d76f0a2b503a32ab8b4a689"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a725afaaa7d76f0a2b503a32ab8b4a689">&#9670;&#160;</a></span>ADXL345_REG_INT_MAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_INT_MAP&#160;&#160;&#160;0x2FU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Mapeo de interrupciones a INT1/INT2 </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00069">69</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>.</p>
+
+</div>
+</div>
+<a id="aa1a2a197465ce44bf8a2c06acc22c561" name="aa1a2a197465ce44bf8a2c06acc22c561"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa1a2a197465ce44bf8a2c06acc22c561">&#9670;&#160;</a></span>ADXL345_REG_INT_SOURCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_INT_SOURCE&#160;&#160;&#160;0x30U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Fuente de interrupciones (RO) </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00070">70</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a7378c1d55a972c54ce6608c1e32336ef" name="a7378c1d55a972c54ce6608c1e32336ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7378c1d55a972c54ce6608c1e32336ef">&#9670;&#160;</a></span>ADXL345_REG_LATENT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_LATENT&#160;&#160;&#160;0x22U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Latencia entre taps </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00056">56</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a47ada0987f13abc327791f3b721fc2fa" name="a47ada0987f13abc327791f3b721fc2fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47ada0987f13abc327791f3b721fc2fa">&#9670;&#160;</a></span>ADXL345_REG_OFSX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_OFSX&#160;&#160;&#160;0x1EU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Offset eje X </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00052">52</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a9f528be643cec2847192f1866705b570" name="a9f528be643cec2847192f1866705b570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f528be643cec2847192f1866705b570">&#9670;&#160;</a></span>ADXL345_REG_OFSY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_OFSY&#160;&#160;&#160;0x1FU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Offset eje Y </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00053">53</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="ae81729318b7fa11a631c4e1031fe7c97" name="ae81729318b7fa11a631c4e1031fe7c97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae81729318b7fa11a631c4e1031fe7c97">&#9670;&#160;</a></span>ADXL345_REG_OFSZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_OFSZ&#160;&#160;&#160;0x20U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Offset eje Z </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00054">54</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="aa8b343258a85689467d33fb6e7a92d18" name="aa8b343258a85689467d33fb6e7a92d18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8b343258a85689467d33fb6e7a92d18">&#9670;&#160;</a></span>ADXL345_REG_POWER_CTL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_POWER_CTL&#160;&#160;&#160;0x2DU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Control de ahorro de energia </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00067">67</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>, <a class="el" href="adxl345_8c_source.html#l00246">adxl345_standby()</a> y <a class="el" href="adxl345_8c_source.html#l00254">adxl345_wakeup()</a>.</p>
+
+</div>
+</div>
+<a id="a07887f474abd214ba8528cd136bc2b60" name="a07887f474abd214ba8528cd136bc2b60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07887f474abd214ba8528cd136bc2b60">&#9670;&#160;</a></span>ADXL345_REG_TAP_AXES</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_TAP_AXES&#160;&#160;&#160;0x2AU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Control de ejes para tap </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00064">64</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="aed83f0847d342ebbbe0c3eafeb12dda8" name="aed83f0847d342ebbbe0c3eafeb12dda8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed83f0847d342ebbbe0c3eafeb12dda8">&#9670;&#160;</a></span>ADXL345_REG_THRESH_ACT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_THRESH_ACT&#160;&#160;&#160;0x24U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Umbral de actividad </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00058">58</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a0522945d2a7b9a37f7d76e2620234576" name="a0522945d2a7b9a37f7d76e2620234576"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0522945d2a7b9a37f7d76e2620234576">&#9670;&#160;</a></span>ADXL345_REG_THRESH_FF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_THRESH_FF&#160;&#160;&#160;0x28U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Umbral de caida libre </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00062">62</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a6bd7ad5b22116ad715dd655755d8c129" name="a6bd7ad5b22116ad715dd655755d8c129"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bd7ad5b22116ad715dd655755d8c129">&#9670;&#160;</a></span>ADXL345_REG_THRESH_INACT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_THRESH_INACT&#160;&#160;&#160;0x25U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Umbral de inactividad </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00059">59</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a4606ede066d6a452645f00652f6f3adc" name="a4606ede066d6a452645f00652f6f3adc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4606ede066d6a452645f00652f6f3adc">&#9670;&#160;</a></span>ADXL345_REG_THRESH_TAP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_THRESH_TAP&#160;&#160;&#160;0x1DU</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Umbral de tap </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00051">51</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a5abb839b3f7233cb3882e15899399d4c" name="a5abb839b3f7233cb3882e15899399d4c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5abb839b3f7233cb3882e15899399d4c">&#9670;&#160;</a></span>ADXL345_REG_TIME_FF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_TIME_FF&#160;&#160;&#160;0x29U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tiempo minimo de caida libre </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00063">63</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="ace645cf273f2c8332d24bb37fea7f725" name="ace645cf273f2c8332d24bb37fea7f725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace645cf273f2c8332d24bb37fea7f725">&#9670;&#160;</a></span>ADXL345_REG_TIME_INACT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_TIME_INACT&#160;&#160;&#160;0x26U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Tiempo de inactividad </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00060">60</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="ab8b04304c7de9e6f1b530418b0b9dddd" name="ab8b04304c7de9e6f1b530418b0b9dddd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8b04304c7de9e6f1b530418b0b9dddd">&#9670;&#160;</a></span>ADXL345_REG_WINDOW</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_REG_WINDOW&#160;&#160;&#160;0x23U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Ventana para doble tap </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00057">57</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="afc4336b02db4457f97336e2138a08f55" name="afc4336b02db4457f97336e2138a08f55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc4336b02db4457f97336e2138a08f55">&#9670;&#160;</a></span>ADXL345_SPI_BITRATE_HZ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_SPI_BITRATE_HZ&#160;&#160;&#160;2000000UL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Velocidad de reloj SPI. Datasheet: maximo 5 MHz (100 pF de carga). Se usa un valor conservador para mejorar la integridad de senal en cables largos hacia el sensor pegado al cuello del paciente. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00037">37</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a47117b91427b95ff46c7f44a9d19f156" name="a47117b91427b95ff46c7f44a9d19f156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a47117b91427b95ff46c7f44a9d19f156">&#9670;&#160;</a></span>ADXL345_SPI_CLK_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_SPI_CLK_MODE&#160;&#160;&#160;3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Modo de reloj SPI requerido por el ADXL345: CPOL = 1, CPHA = 1 (modo 3). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00040">40</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a id="a0928397c9e3e1e84b36a672976252b97" name="a0928397c9e3e1e84b36a672976252b97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0928397c9e3e1e84b36a672976252b97">&#9670;&#160;</a></span>ADXL345_SPI_DEVICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_SPI_DEVICE&#160;&#160;&#160;<a class="el" href="group___s_p_i.html#gga919e4040af605e210f6c5f4c6fe13a12aa4b24f86e59b845990862af6481c321f">SPI_1</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dispositivo SPI (CS) al que esta conectado el ADXL345. Ajustar segun el diseno de PCB (SPI_1, SPI_2 o SPI_3 definidos en <a class="el" href="spi__mcu_8h.html">spi_mcu.h</a>). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00031">31</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00081">adxl345_read_registers()</a> y <a class="el" href="adxl345_8c_source.html#l00067">adxl345_write_register()</a>.</p>
+
+</div>
+</div>
+<a id="a7fce1e2c32d636b947e8381f4eba0b6f" name="a7fce1e2c32d636b947e8381f4eba0b6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fce1e2c32d636b947e8381f4eba0b6f">&#9670;&#160;</a></span>ADXL345_WRITE_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADXL345_WRITE_BIT&#160;&#160;&#160;0x00U</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Bit R/W: 0 = escritura </p>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00045">45</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00067">adxl345_write_register()</a>.</p>
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="a6dab48b5ab19b85f0b50ffd457b5b1b0" name="a6dab48b5ab19b85f0b50ffd457b5b1b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">&#9670;&#160;</a></span>adxl345_status_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Codigos de retorno del driver. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a6dab48b5ab19b85f0b50ffd457b5b1b0a5bc4a5e95d97714f8bd6d49148043731" name="a6dab48b5ab19b85f0b50ffd457b5b1b0a5bc4a5e95d97714f8bd6d49148043731"></a>ADXL345_OK&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a6dab48b5ab19b85f0b50ffd457b5b1b0a1181e5c4ad7e9b218a24186db5ef4240" name="a6dab48b5ab19b85f0b50ffd457b5b1b0a1181e5c4ad7e9b218a24186db5ef4240"></a>ADXL345_ERROR_SPI&#160;</td><td class="fielddoc"><p>Fallo en la capa SPI </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a6dab48b5ab19b85f0b50ffd457b5b1b0afa2b3adf4a5aa5674eaac4801982e887" name="a6dab48b5ab19b85f0b50ffd457b5b1b0afa2b3adf4a5aa5674eaac4801982e887"></a>ADXL345_ERROR_DEVID&#160;</td><td class="fielddoc"><p>DEVID leido no coincide (sensor no responde / mal cableado) </p>
+</td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8h_source.html#l00142">142</a> del archivo <a class="el" href="adxl345_8h_source.html">adxl345.h</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ace658ce86e9a3f55de4a51a3c45c07a3" name="ace658ce86e9a3f55de4a51a3c45c07a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace658ce86e9a3f55de4a51a3c45c07a3">&#9670;&#160;</a></span>adxl345_get_fifo_entries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_get_fifo_entries </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>entries</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve la cantidad de muestras actualmente almacenadas en el FIFO. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entries</td><td>Puntero de salida (0-32). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00230">230</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8c_source.html#l00081">adxl345_read_registers()</a>, <a class="el" href="adxl345_8h_source.html#l00079">ADXL345_REG_FIFO_STATUS</a> y <a class="el" href="ble__hid__mcu_8c_source.html#l00954">status</a>.</p>
+
+</div>
+</div>
+<a id="ae76cfb6449ee4c25dc202d523aff29c0" name="ae76cfb6449ee4c25dc202d523aff29c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae76cfb6449ee4c25dc202d523aff29c0">&#9670;&#160;</a></span>adxl345_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_init </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structadxl345__config__t.html">adxl345_config_t</a> *</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el bus SPI (via spi_mcu) y el ADXL345: verifica DEVID, configura DATA_FORMAT, BW_RATE, FIFO (opcional) y entra en modo medicion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>Puntero a configuracion deseada (rango, ODR, bajo consumo, FIFO). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK si la inicializacion y la autoverificacion de DEVID fueron exitosas. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00114">114</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00092">ADXL345_BW_RATE_LOW_POWER</a>, <a class="el" href="adxl345_8h_source.html#l00093">ADXL345_BW_RATE_MASK</a>, <a class="el" href="adxl345_8h_source.html#l00111">ADXL345_DATA_FORMAT_FULL_RES</a>, <a class="el" href="adxl345_8h_source.html#l00082">ADXL345_DEVID_VALUE</a>, <a class="el" href="adxl345_8h_source.html#l00145">ADXL345_ERROR_DEVID</a>, <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00121">ADXL345_FIFO_MODE_BYPASS</a>, <a class="el" href="adxl345_8h_source.html#l00123">ADXL345_FIFO_MODE_STREAM</a>, <a class="el" href="adxl345_8h_source.html#l00127">ADXL345_FIFO_SAMPLES_MASK</a>, <a class="el" href="adxl345_8h_source.html#l00136">ADXL345_INT_WATERMARK</a>, <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8h_source.html#l00087">ADXL345_POWER_CTL_MEASURE</a>, <a class="el" href="adxl345_8h_source.html#l00118">ADXL345_RANGE_MASK</a>, <a class="el" href="adxl345_8c_source.html#l00081">adxl345_read_registers()</a>, <a class="el" href="adxl345_8h_source.html#l00066">ADXL345_REG_BW_RATE</a>, <a class="el" href="adxl345_8h_source.html#l00071">ADXL345_REG_DATA_FORMAT</a>, <a class="el" href="adxl345_8h_source.html#l00050">ADXL345_REG_DEVID</a>, <a class="el" href="adxl345_8h_source.html#l00078">ADXL345_REG_FIFO_CTL</a>, <a class="el" href="adxl345_8h_source.html#l00068">ADXL345_REG_INT_ENABLE</a>, <a class="el" href="adxl345_8h_source.html#l00069">ADXL345_REG_INT_MAP</a>, <a class="el" href="adxl345_8h_source.html#l00067">ADXL345_REG_POWER_CTL</a>, <a class="el" href="adxl345_8c_source.html#l00067">adxl345_write_register()</a>, <a class="el" href="adxl345_8h_source.html#l00162">adxl345_config_t::fifo_watermark_samples</a>, <a class="el" href="adxl345_8h_source.html#l00158">adxl345_config_t::full_resolution</a>, <a class="el" href="adxl345_8h_source.html#l00160">adxl345_config_t::low_power_mode</a>, <a class="el" href="adxl345_8h_source.html#l00157">adxl345_config_t::range</a>, <a class="el" href="adxl345_8h_source.html#l00159">adxl345_config_t::rate_code</a> y <a class="el" href="adxl345_8h_source.html#l00161">adxl345_config_t::use_fifo_stream</a>.</p>
+
+</div>
+</div>
+<a id="acaa7c94bbe85c988f061abb4654e7ab0" name="acaa7c94bbe85c988f061abb4654e7ab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa7c94bbe85c988f061abb4654e7ab0">&#9670;&#160;</a></span>adxl345_raw_to_mg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t adxl345_raw_to_mg </td>
+          <td>(</td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>raw</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>full_resolution</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>range</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convierte una lectura cruda a mili-g, segun el rango y modo de resolucion configurados. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">raw</td><td>Valor crudo de un eje (twos complement). </td></tr>
+    <tr><td class="paramname">full_resolution</td><td>true si el sensor esta en modo full-resolution. </td></tr>
+    <tr><td class="paramname">range</td><td>Rango configurado (ADXL345_RANGE_xxx), solo relevante si full_resolution es false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Aceleracion en mili-g (mg). </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00212">212</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00117">ADXL345_RANGE_16G</a>, <a class="el" href="adxl345_8h_source.html#l00114">ADXL345_RANGE_2G</a>, <a class="el" href="adxl345_8h_source.html#l00115">ADXL345_RANGE_4G</a>, <a class="el" href="adxl345_8h_source.html#l00116">ADXL345_RANGE_8G</a> y <a class="el" href="adxl345_8h_source.html#l00118">ADXL345_RANGE_MASK</a>.</p>
+
+</div>
+</div>
+<a id="a2213013aec58834c71da8dfb609c6231" name="a2213013aec58834c71da8dfb609c6231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2213013aec58834c71da8dfb609c6231">&#9670;&#160;</a></span>adxl345_read_accel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_read_accel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structadxl345__accel__raw__t.html">adxl345_accel_raw_t</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee una muestra de aceleracion (X, Y, Z) mediante burst read de 6 bytes desde DATAX0. Si el FIFO esta habilitado, esto extrae la muestra mas antigua disponible. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Puntero a estructura donde se almacenan los valores crudos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00188">188</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8c_source.html#l00081">adxl345_read_registers()</a>, <a class="el" href="adxl345_8h_source.html#l00072">ADXL345_REG_DATAX0</a>, <a class="el" href="ble__hid__mcu_8c_source.html#l00954">status</a>, <a class="el" href="adxl345_8h_source.html#l00150">adxl345_accel_raw_t::x</a>, <a class="el" href="adxl345_8h_source.html#l00151">adxl345_accel_raw_t::y</a> y <a class="el" href="adxl345_8h_source.html#l00152">adxl345_accel_raw_t::z</a>.</p>
+
+</div>
+</div>
+<a id="a57b5c1606c416938562ca52858260e7f" name="a57b5c1606c416938562ca52858260e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57b5c1606c416938562ca52858260e7f">&#9670;&#160;</a></span>adxl345_read_registers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_read_registers </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>rx_buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee uno o mas registros consecutivos del ADXL345 (lectura en rafaga). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>Direccion de registro inicial. </td></tr>
+    <tr><td class="paramname">rx_buf</td><td>Buffer destino, debe tener al menos <span class="tt">length</span> bytes. </td></tr>
+    <tr><td class="paramname">length</td><td>Cantidad de registros/bytes a leer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00081">81</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00046">ADXL345_MULTIBYTE_BIT</a>, <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8h_source.html#l00044">ADXL345_READ_BIT</a>, <a class="el" href="adxl345_8h_source.html#l00031">ADXL345_SPI_DEVICE</a> y <a class="el" href="spi__mcu_8c_source.html#l00184">SpiReadWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00230">adxl345_get_fifo_entries()</a>, <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a> y <a class="el" href="adxl345_8c_source.html#l00188">adxl345_read_accel()</a>.</p>
+
+</div>
+</div>
+<a id="a059ed7986b5a373642ccf1f0d1ea13ef" name="a059ed7986b5a373642ccf1f0d1ea13ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a059ed7986b5a373642ccf1f0d1ea13ef">&#9670;&#160;</a></span>adxl345_standby()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_standby </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pone al sensor en modo standby (bajo consumo, 0.1 uA tipico), conservando el contenido del FIFO. Util para pausar el registro sin perder configuracion. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00246">246</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00067">ADXL345_REG_POWER_CTL</a> y <a class="el" href="adxl345_8c_source.html#l00067">adxl345_write_register()</a>.</p>
+
+</div>
+</div>
+<a id="ac4e75eeee2c00216f4deaf8701d5c91c" name="ac4e75eeee2c00216f4deaf8701d5c91c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e75eeee2c00216f4deaf8701d5c91c">&#9670;&#160;</a></span>adxl345_wakeup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_wakeup </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vuelve a modo medicion luego de un <a class="el" href="#a059ed7986b5a373642ccf1f0d1ea13ef" title="Pone al sensor en modo standby (bajo consumo, 0.1 uA tipico), conservando el contenido del FIFO....">adxl345_standby()</a>. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00254">254</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00087">ADXL345_POWER_CTL_MEASURE</a>, <a class="el" href="adxl345_8h_source.html#l00067">ADXL345_REG_POWER_CTL</a> y <a class="el" href="adxl345_8c_source.html#l00067">adxl345_write_register()</a>.</p>
+
+</div>
+</div>
+<a id="ac64d93d2b3fa7055a0ef79096aa872a0" name="ac64d93d2b3fa7055a0ef79096aa872a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac64d93d2b3fa7055a0ef79096aa872a0">&#9670;&#160;</a></span>adxl345_write_register()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_write_register </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Escribe un unico registro del ADXL345. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>Direccion de registro (0x00 - 0x39). </td></tr>
+    <tr><td class="paramname">value</td><td>Valor a escribir. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00067">67</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8h_source.html#l00031">ADXL345_SPI_DEVICE</a>, <a class="el" href="adxl345_8h_source.html#l00045">ADXL345_WRITE_BIT</a> y <a class="el" href="spi__mcu_8c_source.html#l00145">SpiWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>, <a class="el" href="adxl345_8c_source.html#l00246">adxl345_standby()</a> y <a class="el" href="adxl345_8c_source.html#l00254">adxl345_wakeup()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_ec09302fb0adc1632f5eb1743ad0d2a7.html">inc</a></li><li class="navelem"><a href="adxl345_8h.html">adxl345.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

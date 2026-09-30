@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Osciloscopio: Archivo de código fuente C:/Users/faust/Barbagelata_2C_2026/firmware/projects/Osciloscopio/main/Osciloscopio.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Osciloscopio<span id="projectnumber">&#160;1.0</span>
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_osciloscopio_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Osciloscopio.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_osciloscopio_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">/*==================[inclusions]=============================================*/</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &quot;<a class="code" href="analog__io__mcu_8h.html">analog_io_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;<a class="code" href="uart__mcu_8h.html">uart_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;<a class="code" href="timer__mcu_8h.html">timer_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment">/*==================[macros and definitions]=================================*/</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="_osciloscopio_8c.html#a615aed21aa6825462b7c17b0c238ffe2">   35</a></span><span class="preprocessor">#define UART_BAUD_RATE      115200</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="_osciloscopio_8c.html#a7fb9fde533f9b9bc8e4ae31524c9ea51">   37</a></span><span class="preprocessor">#define ADC_CHANNEL         CH1</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_osciloscopio_8c.html#ab58221f21f77b0c6cdf6c8e6ff4e9baf">   40</a></span><span class="preprocessor">#define SAMPLE_FREQ_HZ      500                         </span><span class="comment">/* muestreo del ADC  */</span><span class="preprocessor"></span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_osciloscopio_8c.html#af0386a77b9d1b69125d86b3d2de6b0fd">   42</a></span><span class="preprocessor">#define SAMPLE_PERIOD_US    (1000000 / SAMPLE_FREQ_HZ)  </span><span class="comment">/* 2000 us           */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="_osciloscopio_8c.html#a10902b419b10218339e3b8affa7fe828">   45</a></span><span class="preprocessor">#define ECG_FREQ_HZ         250                         </span><span class="comment">/* reproducción ECG  */</span><span class="preprocessor"></span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="_osciloscopio_8c.html#afe22dfedf329a5ab67340f31e0c9cf8b">   47</a></span><span class="preprocessor">#define ECG_PERIOD_US       (1000000 / ECG_FREQ_HZ)     </span><span class="comment">/* 4000 us           */</span><span class="preprocessor"></span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="_osciloscopio_8c.html#a6b20d41d6252e9871430c242cb1a56e7">   49</a></span><span class="preprocessor">#define BUFFER_SIZE         231</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment">/*==================[internal data definition]===============================*/</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">static</span> TaskHandle_t sample_task_handle = NULL;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="keyword">static</span> TaskHandle_t ecg_task_handle    = NULL;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="foldopen" id="foldopen00058" data-start="{" data-end="};">
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="_osciloscopio_8c.html#a2dafb8b8179af8e9f4cc4df3f588e42e">   58</a></span><span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="_osciloscopio_8c.html#a2dafb8b8179af8e9f4cc4df3f588e42e">ecg</a>[<a class="code hl_define" href="_osciloscopio_8c.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>] = {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    76, 77, 78, 77, 79, 86, 81, 76, 84, 93, 85, 80,</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    89, 95, 89, 85, 93, 98, 94, 88, 98, 105, 96, 91,</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    99, 105, 101, 96, 102, 106, 101, 96, 100, 107, 101,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    94, 100, 104, 100, 91, 99, 103, 98, 91, 96, 105, 95,</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    88, 95, 100, 94, 85, 93, 99, 92, 84, 91, 96, 87, 80,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    83, 92, 86, 78, 84, 89, 79, 73, 81, 83, 78, 70, 80, 82,</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    79, 69, 80, 82, 81, 70, 75, 81, 77, 74, 79, 83, 82, 72,</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    80, 87, 79, 76, 85, 95, 87, 81, 88, 93, 88, 84, 87, 94,</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    86, 82, 85, 94, 85, 82, 85, 95, 86, 83, 92, 99, 91, 88,</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    94, 98, 95, 90, 97, 105, 104, 94, 98, 114, 117, 124, 144,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    180, 210, 236, 253, 227, 171, 99, 49, 34, 29, 43, 69, 89,</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    89, 90, 98, 107, 104, 98, 104, 110, 102, 98, 103, 111, 101,</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    94, 103, 108, 102, 95, 97, 106, 100, 92, 101, 103, 100, 94, 98,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    103, 96, 90, 98, 103, 97, 90, 99, 104, 95, 90, 99, 104, 100, 93,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    100, 106, 101, 93, 101, 105, 103, 96, 105, 112, 105, 99, 103, 108,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    99, 96, 102, 106, 99, 90, 92, 100, 87, 80, 82, 88, 77, 69, 75, 79,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    74, 67, 71, 78, 72, 67, 73, 81, 77, 71, 75, 84, 79, 77, 77, 76, 76,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>};</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">/*==================[internal functions definition]==========================*/</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="keyword">static</span> <span class="keywordtype">void</span> FuncTimerSample(<span class="keywordtype">void</span> *param){</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    vTaskNotifyGiveFromISR(sample_task_handle, pdFALSE);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keyword">static</span> <span class="keywordtype">void</span> FuncTimerEcg(<span class="keywordtype">void</span> *param){</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    vTaskNotifyGiveFromISR(ecg_task_handle, pdFALSE);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>}</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="keyword">static</span> <span class="keywordtype">void</span> SampleTask(<span class="keywordtype">void</span> *param){</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    uint16_t sample = 0;</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keywordtype">char</span> linea[32];</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>    <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_define" href="_osciloscopio_8c.html#a7fb9fde533f9b9bc8e4ae31524c9ea51">ADC_CHANNEL</a>, &amp;sample);</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        snprintf(linea, <span class="keyword">sizeof</span>(linea), <span class="stringliteral">&quot;%d\r\n&quot;</span>, (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span>)sample);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, linea);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>}</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="keyword">static</span> <span class="keywordtype">void</span> EcgTask(<span class="keywordtype">void</span> *param){</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    uint16_t i = 0;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">while</span>(<span class="keyword">true</span>){</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        <a class="code hl_function" href="group___analog___i_o.html#gad3fea4064bfa31ae309d4da542347198">AnalogOutputWrite</a>((uint8_t)<a class="code hl_variable" href="_osciloscopio_8c.html#a2dafb8b8179af8e9f4cc4df3f588e42e">ecg</a>[i]);   <span class="comment">/* cast: hay valores &gt; 127 */</span></div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        i++;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>        <span class="keywordflow">if</span>(i &gt;= <a class="code hl_define" href="_osciloscopio_8c.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>){</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            i = 0;</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>        }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>}</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span><span class="comment">/*==================[external functions definition]==========================*/</span></div>
+<div class="foldopen" id="foldopen00156" data-start="{" data-end="}">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="_osciloscopio_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">  156</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_osciloscopio_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a>(<span class="keywordtype">void</span>){</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <a class="code hl_struct" href="structanalog__input__config__t.html">analog_input_config_t</a> adc_config = {</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        .input       = <a class="code hl_define" href="_osciloscopio_8c.html#a7fb9fde533f9b9bc8e4ae31524c9ea51">ADC_CHANNEL</a>,</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        .mode        = <a class="code hl_enumvalue" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>,</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>        .func_p      = NULL,</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        .param_p     = NULL,</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        .sample_frec = 0</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    };</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <a class="code hl_function" href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a>(&amp;adc_config);</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <a class="code hl_function" href="group___analog___i_o.html#gab57399e946247652a096a0e2d3a1b69a">AnalogOutputInit</a>();</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <a class="code hl_struct" href="structserial__config__t.html">serial_config_t</a> uart_config = {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        .port      = <a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>,</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        .baud_rate = <a class="code hl_define" href="_osciloscopio_8c.html#a615aed21aa6825462b7c17b0c238ffe2">UART_BAUD_RATE</a>,</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        .func_p    = <a class="code hl_define" href="group___u_a_r_t.html#ga544040074fa1abddedb1eaade6994035">UART_NO_INT</a>,</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>        .param_p   = NULL</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    };</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>    <a class="code hl_function" href="group___u_a_r_t.html#ga440f6a03dfd8b310f5fdf42c3bf20c42">UartInit</a>(&amp;uart_config);</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>    xTaskCreate(&amp;SampleTask, <span class="stringliteral">&quot;sample&quot;</span>, 2048, NULL, 5, &amp;sample_task_handle);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>    xTaskCreate(&amp;EcgTask,    <span class="stringliteral">&quot;ecg&quot;</span>,    2048, NULL, 5, &amp;ecg_task_handle);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    <a class="code hl_struct" href="structtimer__config__t.html">timer_config_t</a> timer_sample = {</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        .timer   = <a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a>,</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        .period  = <a class="code hl_define" href="_osciloscopio_8c.html#af0386a77b9d1b69125d86b3d2de6b0fd">SAMPLE_PERIOD_US</a>,</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        .func_p  = FuncTimerSample,</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        .param_p = NULL</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    };</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_sample);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <a class="code hl_struct" href="structtimer__config__t.html">timer_config_t</a> timer_ecg = {</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        .timer   = <a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f">TIMER_B</a>,</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        .period  = <a class="code hl_define" href="_osciloscopio_8c.html#afe22dfedf329a5ab67340f31e0c9cf8b">ECG_PERIOD_US</a>,</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        .func_p  = FuncTimerEcg,</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        .param_p = NULL</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    };</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_ecg);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    <a class="code hl_function" href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a>(timer_ecg.<a class="code hl_variable" href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer</a>);</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <a class="code hl_function" href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a>(timer_sample.<a class="code hl_variable" href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer</a>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
+</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="comment">/*==================[end of file]============================================*/</span></div>
+<div class="ttc" id="a_osciloscopio_8c_html_a2dafb8b8179af8e9f4cc4df3f588e42e"><div class="ttname"><a href="_osciloscopio_8c.html#a2dafb8b8179af8e9f4cc4df3f588e42e">ecg</a></div><div class="ttdeci">const char ecg[BUFFER_SIZE]</div><div class="ttdoc">Señal digital de ECG (provista por la cátedra), 231 muestras de 8 bits.</div><div class="ttdef"><b>Definition</b> <a href="#l00058">Osciloscopio.c:58</a></div></div>
+<div class="ttc" id="a_osciloscopio_8c_html_a615aed21aa6825462b7c17b0c238ffe2"><div class="ttname"><a href="_osciloscopio_8c.html#a615aed21aa6825462b7c17b0c238ffe2">UART_BAUD_RATE</a></div><div class="ttdeci">#define UART_BAUD_RATE</div><div class="ttdoc">Velocidad de la UART hacia la PC, en baudios.</div><div class="ttdef"><b>Definition</b> <a href="#l00035">Osciloscopio.c:35</a></div></div>
+<div class="ttc" id="a_osciloscopio_8c_html_a630544a7f0a2cc40d8a7fefab7e2fe70"><div class="ttname"><a href="_osciloscopio_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a></div><div class="ttdeci">void app_main(void)</div><div class="ttdoc">Función principal de la aplicación.</div><div class="ttdef"><b>Definition</b> <a href="#l00156">Osciloscopio.c:156</a></div></div>
+<div class="ttc" id="a_osciloscopio_8c_html_a6b20d41d6252e9871430c242cb1a56e7"><div class="ttname"><a href="_osciloscopio_8c.html#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a></div><div class="ttdeci">#define BUFFER_SIZE</div><div class="ttdoc">Cantidad de muestras del vector de ECG.</div><div class="ttdef"><b>Definition</b> <a href="#l00049">Osciloscopio.c:49</a></div></div>
+<div class="ttc" id="a_osciloscopio_8c_html_a7fb9fde533f9b9bc8e4ae31524c9ea51"><div class="ttname"><a href="_osciloscopio_8c.html#a7fb9fde533f9b9bc8e4ae31524c9ea51">ADC_CHANNEL</a></div><div class="ttdeci">#define ADC_CHANNEL</div><div class="ttdoc">Canal del conversor A/D utilizado para digitalizar la señal.</div><div class="ttdef"><b>Definition</b> <a href="#l00037">Osciloscopio.c:37</a></div></div>
+<div class="ttc" id="a_osciloscopio_8c_html_af0386a77b9d1b69125d86b3d2de6b0fd"><div class="ttname"><a href="_osciloscopio_8c.html#af0386a77b9d1b69125d86b3d2de6b0fd">SAMPLE_PERIOD_US</a></div><div class="ttdeci">#define SAMPLE_PERIOD_US</div><div class="ttdoc">Período de muestreo del ADC en microsegundos (2000 us).</div><div class="ttdef"><b>Definition</b> <a href="#l00042">Osciloscopio.c:42</a></div></div>
+<div class="ttc" id="a_osciloscopio_8c_html_afe22dfedf329a5ab67340f31e0c9cf8b"><div class="ttname"><a href="_osciloscopio_8c.html#afe22dfedf329a5ab67340f31e0c9cf8b">ECG_PERIOD_US</a></div><div class="ttdeci">#define ECG_PERIOD_US</div><div class="ttdoc">Período de reproducción del ECG en microsegundos (4000 us).</div><div class="ttdef"><b>Definition</b> <a href="#l00047">Osciloscopio.c:47</a></div></div>
+<div class="ttc" id="aanalog__io__mcu_8h_html"><div class="ttname"><a href="analog__io__mcu_8h.html">analog_io_mcu.h</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_ga24ce5556aa4682468220b982f151cdfe"><div class="ttname"><a href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a></div><div class="ttdeci">void AnalogInputInit(analog_input_config_t *config)</div><div class="ttdoc">Analog input initialization.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00045">analog_io_mcu.c:45</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gab57399e946247652a096a0e2d3a1b69a"><div class="ttname"><a href="group___analog___i_o.html#gab57399e946247652a096a0e2d3a1b69a">AnalogOutputInit</a></div><div class="ttdeci">void AnalogOutputInit(void)</div><div class="ttdoc">Analog output initialization (DAC).</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00120">analog_io_mcu.c:120</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gab5ae00a35744f407072230979e593fd9"><div class="ttname"><a href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a></div><div class="ttdeci">void AnalogInputReadSingle(adc_ch_t channel, uint16_t *value)</div><div class="ttdoc">Read single channel.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00130">analog_io_mcu.c:130</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gad3fea4064bfa31ae309d4da542347198"><div class="ttname"><a href="group___analog___i_o.html#gad3fea4064bfa31ae309d4da542347198">AnalogOutputWrite</a></div><div class="ttdeci">void AnalogOutputWrite(uint8_t value)</div><div class="ttdoc">Digital-to-Analog convert.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00159">analog_io_mcu.c:159</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4"><div class="ttname"><a href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a></div><div class="ttdeci">@ ADC_SINGLE</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00038">analog_io_mcu.h:38</a></div></div>
+<div class="ttc" id="agroup___timer_html_ga0b1779c5b8f91cc83c8bfd127071ea2f"><div class="ttname"><a href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a></div><div class="ttdeci">void TimerStart(timer_mcu_t timer)</div><div class="ttdoc">Start timer count.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00116">timer_mcu.c:116</a></div></div>
+<div class="ttc" id="agroup___timer_html_gae8617c0d176463a60441464ad26563f6"><div class="ttname"><a href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a></div><div class="ttdeci">void TimerInit(timer_config_t *timer_ini)</div><div class="ttdoc">Timer initialization.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00067">timer_mcu.c:67</a></div></div>
+<div class="ttc" id="agroup___timer_html_ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598"><div class="ttname"><a href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a></div><div class="ttdeci">@ TIMER_A</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00032">timer_mcu.h:32</a></div></div>
+<div class="ttc" id="agroup___timer_html_ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f"><div class="ttname"><a href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a7537925211db58591cb5eeb7ebc7f44f">TIMER_B</a></div><div class="ttdeci">@ TIMER_B</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00033">timer_mcu.h:33</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga440f6a03dfd8b310f5fdf42c3bf20c42"><div class="ttname"><a href="group___u_a_r_t.html#ga440f6a03dfd8b310f5fdf42c3bf20c42">UartInit</a></div><div class="ttdeci">void UartInit(serial_config_t *port_config)</div><div class="ttdoc">Serial port initialization.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00107">uart_mcu.c:107</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga544040074fa1abddedb1eaade6994035"><div class="ttname"><a href="group___u_a_r_t.html#ga544040074fa1abddedb1eaade6994035">UART_NO_INT</a></div><div class="ttdeci">#define UART_NO_INT</div><div class="ttdoc">UART driver for the ESP-EDU Board.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8h_source.html#l00026">uart_mcu.h:26</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga60db217694ea24ad75fcedda3336a3a8"><div class="ttname"><a href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a></div><div class="ttdeci">void UartSendString(uart_mcu_port_t port, const char *msg)</div><div class="ttdoc">Send a String trough serial port.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00193">uart_mcu.c:193</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056"><div class="ttname"><a href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a></div><div class="ttdeci">@ UART_PC</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8h_source.html#l00032">uart_mcu.h:32</a></div></div>
+<div class="ttc" id="astructanalog__input__config__t_html"><div class="ttname"><a href="structanalog__input__config__t.html">analog_input_config_t</a></div><div class="ttdoc">Analog inputs config structure.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00048">analog_io_mcu.h:48</a></div></div>
+<div class="ttc" id="astructserial__config__t_html"><div class="ttname"><a href="structserial__config__t.html">serial_config_t</a></div><div class="ttdoc">Serial port configuration struct.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8h_source.html#l00038">uart_mcu.h:38</a></div></div>
+<div class="ttc" id="astructtimer__config__t_html"><div class="ttname"><a href="structtimer__config__t.html">timer_config_t</a></div><div class="ttdoc">Timer configuration struct.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00039">timer_mcu.h:39</a></div></div>
+<div class="ttc" id="astructtimer__config__t_html_ab83043b8038c5e630f6a2a05ea007e49"><div class="ttname"><a href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer_config_t::timer</a></div><div class="ttdeci">timer_mcu_t timer</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00040">timer_mcu.h:40</a></div></div>
+<div class="ttc" id="atimer__mcu_8h_html"><div class="ttname"><a href="timer__mcu_8h.html">timer_mcu.h</a></div></div>
+<div class="ttc" id="auart__mcu_8h_html"><div class="ttname"><a href="uart__mcu_8h.html">uart_mcu.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a href="dir_942ba7a3cbc70007d99036dc803b10c3.html">Osciloscopio</a></li><li class="navelem"><a href="dir_6cbe3520b75940a6248ce09c1867be69.html">main</a></li><li class="navelem"><a href="_osciloscopio_8c.html">Osciloscopio.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

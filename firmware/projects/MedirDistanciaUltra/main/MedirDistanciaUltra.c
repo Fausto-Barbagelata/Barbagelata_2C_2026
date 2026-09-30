@@ -1,3 +1,18 @@
+/**
+ * @file MedirDistanciaUltra.c
+ * @brief Actividad 1 - Medidor de distancia por ultrasonido
+ *
+ * @mainpage Proyecto 2 - Actividad 1: Medidor de distancia por ultrasonido
+ *
+ * @section desc Descripción
+ * Firmware para la EDU-ESP (ESP32-C6) que mide distancia con un sensor HC-SR04 y la
+ * muestra mediante LEDs y un display LCD (LCDITSE0803). Se utilizan los drivers provistos
+ * por la cátedra (led, switch, hc_sr04, lcditse0803) sobre FreeRTOS.
+ * 
+ * @author Fausto Barbagelata
+ * Electrónica Programable - Bioingeniería - Facultad de Ingeniería UNER.
+ */
+
 /*==================[inclusions]=============================================*/
 #include <stdio.h>
 #include <stdint.h>
@@ -10,17 +25,31 @@
 #include "switch.h"
 
 /*==================[macros and definitions]=================================*/
+/** @brief Período de medición del sensor de ultrasonido en milisegundos (1 s). */
 #define CONFIG_BLINK_PERIOD_MEDICION 1000
 
 /*==================[internal data definition]===============================*/
+/** @brief Handle de la tarea de lectura de teclas. */
 TaskHandle_t switches_task_handle = NULL;
+/** @brief Handle de la tarea de medición con el sensor HC-SR04. */
 TaskHandle_t read_ultra_task_handle = NULL;
+/** @brief Handle de la tarea que actualiza LEDs y display LCD. */
 TaskHandle_t leds_lcd_task_handle = NULL;
+/** @brief Estado de la medición: true = midiendo, false = detenida (controlada por TEC1). */
 bool MEDIR = true;
+/** @brief Estado de HOLD: true = el valor del LCD se mantiene congelado (controlado por TEC2). */
 bool HOLD = false;
+/** @brief Última distancia medida, en centímetros. */
 uint16_t DISTANCIA = 0;
 
 /*==================[internal functions declaration]========= ===============*/
+/**
+ * @brief Tarea que lee las teclas por sondeo.
+ *
+ * Cada 200 ms consulta el estado de las teclas. TEC1 (SWITCH_1) conmuta @ref MEDIR y
+ * TEC2 (SWITCH_2) conmuta @ref HOLD.
+ *
+ */
 static void ReadSwitchesTask(void *pvParameter) {
     while (true) {
         int8_t tecla = SwitchesRead();
@@ -34,6 +63,13 @@ static void ReadSwitchesTask(void *pvParameter) {
     }
 }
 
+/**
+ * @brief Tarea que mide la distancia con el HC-SR04.
+ *
+ * Si @ref MEDIR es true, guarda en @ref DISTANCIA el valor medido en cm. Se ejecuta
+ * cada @ref CONFIG_BLINK_PERIOD_MEDICION ms (1 s).
+ *
+ */
 static void ReadUltraTask(void *pvParameter) {
     while (true) {
         if (MEDIR) {
@@ -44,6 +80,17 @@ static void ReadUltraTask(void *pvParameter) {
     }
 }
 
+/**
+ * @brief Tarea que muestra la distancia en LEDs y en el display LCD.
+ *
+ * - Con @ref MEDIR activo: enciende los LEDs según el rango de @ref DISTANCIA
+ *   (<10 cm ninguno; 10-20 LED_1; 20-30 LED_1 y LED_2; >30 los tres) y, si @ref HOLD
+ *   está inactivo, escribe el valor en el LCD.
+ * - Con @ref MEDIR inactivo: apaga todos los LEDs y, si @ref HOLD está inactivo, apaga el LCD.
+ *
+ * Se ejecuta cada 100 ms.
+ *
+ */
 static void LedsAndLcdTask(void *pvParameter) {
     LcdItsE0803Off();
     while (true) {
@@ -78,6 +125,12 @@ static void LedsAndLcdTask(void *pvParameter) {
 
 /*==================[external functions definition]==========================*/
 
+/**
+ * @brief Función principal de la aplicación.
+ *
+ * Inicializa LEDs, teclas, sensor HC-SR04 (ECHO = GPIO_3, TRIGGER = GPIO_2) y display LCD,
+ * y crea las tres tareas de FreeRTOS (prioridad 5, stack de 2048 bytes cada una).
+ */
 void app_main(void) {
     LedsInit();
     SwitchesInit();

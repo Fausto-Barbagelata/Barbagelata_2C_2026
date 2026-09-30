@@ -1,0 +1,419 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Medir Distancia por Ultrasonido V2: Referencia del archivo C:/Users/faust/Barbagelata_2C_2026/firmware/drivers/devices/src/adxl345.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Medir Distancia por Ultrasonido V2
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('adxl345_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo adxl345.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementacion del driver ADXL345 sobre la HAL <a class="el" href="spi__mcu_8c.html">spi_mcu.c</a>.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="adxl345_8h_source.html">adxl345.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+</div>
+<p><a href="adxl345_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ac64d93d2b3fa7055a0ef79096aa872a0" id="r_ac64d93d2b3fa7055a0ef79096aa872a0"><td class="memItemLeft"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac64d93d2b3fa7055a0ef79096aa872a0">adxl345_write_register</a> (uint8_t reg, uint8_t value)</td></tr>
+<tr class="memdesc:ac64d93d2b3fa7055a0ef79096aa872a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Escribe un unico registro del ADXL345.  <br /></td></tr>
+<tr class="memitem:a57b5c1606c416938562ca52858260e7f" id="r_a57b5c1606c416938562ca52858260e7f"><td class="memItemLeft"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a57b5c1606c416938562ca52858260e7f">adxl345_read_registers</a> (uint8_t reg, uint8_t *rx_buf, uint8_t length)</td></tr>
+<tr class="memdesc:a57b5c1606c416938562ca52858260e7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee uno o mas registros consecutivos del ADXL345 (lectura en rafaga).  <br /></td></tr>
+<tr class="memitem:ae76cfb6449ee4c25dc202d523aff29c0" id="r_ae76cfb6449ee4c25dc202d523aff29c0"><td class="memItemLeft"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ae76cfb6449ee4c25dc202d523aff29c0">adxl345_init</a> (const <a class="el" href="structadxl345__config__t.html">adxl345_config_t</a> *config)</td></tr>
+<tr class="memdesc:ae76cfb6449ee4c25dc202d523aff29c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inicializa el bus SPI (via spi_mcu) y el ADXL345: verifica DEVID, configura DATA_FORMAT, BW_RATE, FIFO (opcional) y entra en modo medicion.  <br /></td></tr>
+<tr class="memitem:a2213013aec58834c71da8dfb609c6231" id="r_a2213013aec58834c71da8dfb609c6231"><td class="memItemLeft"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a2213013aec58834c71da8dfb609c6231">adxl345_read_accel</a> (<a class="el" href="structadxl345__accel__raw__t.html">adxl345_accel_raw_t</a> *out)</td></tr>
+<tr class="memdesc:a2213013aec58834c71da8dfb609c6231"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lee una muestra de aceleracion (X, Y, Z) mediante burst read de 6 bytes desde DATAX0. Si el FIFO esta habilitado, esto extrae la muestra mas antigua disponible.  <br /></td></tr>
+<tr class="memitem:acaa7c94bbe85c988f061abb4654e7ab0" id="r_acaa7c94bbe85c988f061abb4654e7ab0"><td class="memItemLeft">int32_t&#160;</td><td class="memItemRight"><a class="el" href="#acaa7c94bbe85c988f061abb4654e7ab0">adxl345_raw_to_mg</a> (int16_t raw, bool full_resolution, uint8_t range)</td></tr>
+<tr class="memdesc:acaa7c94bbe85c988f061abb4654e7ab0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convierte una lectura cruda a mili-g, segun el rango y modo de resolucion configurados.  <br /></td></tr>
+<tr class="memitem:ace658ce86e9a3f55de4a51a3c45c07a3" id="r_ace658ce86e9a3f55de4a51a3c45c07a3"><td class="memItemLeft"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ace658ce86e9a3f55de4a51a3c45c07a3">adxl345_get_fifo_entries</a> (uint8_t *entries)</td></tr>
+<tr class="memdesc:ace658ce86e9a3f55de4a51a3c45c07a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Devuelve la cantidad de muestras actualmente almacenadas en el FIFO.  <br /></td></tr>
+<tr class="memitem:a059ed7986b5a373642ccf1f0d1ea13ef" id="r_a059ed7986b5a373642ccf1f0d1ea13ef"><td class="memItemLeft"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#a059ed7986b5a373642ccf1f0d1ea13ef">adxl345_standby</a> (void)</td></tr>
+<tr class="memdesc:a059ed7986b5a373642ccf1f0d1ea13ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pone al sensor en modo standby (bajo consumo, 0.1 uA tipico), conservando el contenido del FIFO. Util para pausar el registro sin perder configuracion.  <br /></td></tr>
+<tr class="memitem:ac4e75eeee2c00216f4deaf8701d5c91c" id="r_ac4e75eeee2c00216f4deaf8701d5c91c"><td class="memItemLeft"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>&#160;</td><td class="memItemRight"><a class="el" href="#ac4e75eeee2c00216f4deaf8701d5c91c">adxl345_wakeup</a> (void)</td></tr>
+<tr class="memdesc:ac4e75eeee2c00216f4deaf8701d5c91c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vuelve a modo medicion luego de un <a class="el" href="adxl345_8h.html#a059ed7986b5a373642ccf1f0d1ea13ef" title="Pone al sensor en modo standby (bajo consumo, 0.1 uA tipico), conservando el contenido del FIFO....">adxl345_standby()</a>.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementacion del driver ADXL345 sobre la HAL <a class="el" href="spi__mcu_8c.html">spi_mcu.c</a>. </p>
+<p>Protocolo SPI del ADXL345 (4 hilos, modo 3: CPOL=1, CPHA=1):</p>
+<p>Byte 0 enviado por el master: [ R/W | MB | A5 A4 A3 A2 A1 A0 ] R/W = 1 -&gt; lectura, 0 -&gt; escritura MB = 1 -&gt; multiple-byte (rafaga), 0 -&gt; un solo registro A5..A0 = direccion de registro (0x00 a 0x39)</p>
+<p>Bytes siguientes: datos (uno por registro, en orden ascendente de direccion mientras el reloj siga activo y CS se mantenga bajo).</p>
+<p>El bus SPI del microcontrolador (driver ESP-IDF subyacente a <a class="el" href="spi__mcu_8c.html">spi_mcu.c</a>) gestiona automaticamente el pin CS durante la duracion de cada transaccion (spi_device_transmit / spi_device_polling_transmit), por lo que el driver ADXL345 NO necesita manipular CS manualmente: basta con enviar en una unica llamada a SpiWrite/SpiReadWrite el byte de direccion seguido de los bytes de datos, ya que ambos forman una sola transaccion SPI (CS permanece bajo durante toda la operacion, tal como exige el datasheet). </p>
+
+<p class="definition">Definición en el archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ace658ce86e9a3f55de4a51a3c45c07a3" name="ace658ce86e9a3f55de4a51a3c45c07a3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace658ce86e9a3f55de4a51a3c45c07a3">&#9670;&#160;</a></span>adxl345_get_fifo_entries()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_get_fifo_entries </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>entries</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Devuelve la cantidad de muestras actualmente almacenadas en el FIFO. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">entries</td><td>Puntero de salida (0-32). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00230">230</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8c_source.html#l00081">adxl345_read_registers()</a>, <a class="el" href="adxl345_8h_source.html#l00079">ADXL345_REG_FIFO_STATUS</a> y <a class="el" href="ble__hid__mcu_8c_source.html#l00954">status</a>.</p>
+
+</div>
+</div>
+<a id="ae76cfb6449ee4c25dc202d523aff29c0" name="ae76cfb6449ee4c25dc202d523aff29c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae76cfb6449ee4c25dc202d523aff29c0">&#9670;&#160;</a></span>adxl345_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_init </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structadxl345__config__t.html">adxl345_config_t</a> *</td>          <td class="paramname"><span class="paramname"><em>config</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inicializa el bus SPI (via spi_mcu) y el ADXL345: verifica DEVID, configura DATA_FORMAT, BW_RATE, FIFO (opcional) y entra en modo medicion. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>Puntero a configuracion deseada (rango, ODR, bajo consumo, FIFO). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK si la inicializacion y la autoverificacion de DEVID fueron exitosas. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00114">114</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00092">ADXL345_BW_RATE_LOW_POWER</a>, <a class="el" href="adxl345_8h_source.html#l00093">ADXL345_BW_RATE_MASK</a>, <a class="el" href="adxl345_8h_source.html#l00111">ADXL345_DATA_FORMAT_FULL_RES</a>, <a class="el" href="adxl345_8h_source.html#l00082">ADXL345_DEVID_VALUE</a>, <a class="el" href="adxl345_8h_source.html#l00145">ADXL345_ERROR_DEVID</a>, <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00121">ADXL345_FIFO_MODE_BYPASS</a>, <a class="el" href="adxl345_8h_source.html#l00123">ADXL345_FIFO_MODE_STREAM</a>, <a class="el" href="adxl345_8h_source.html#l00127">ADXL345_FIFO_SAMPLES_MASK</a>, <a class="el" href="adxl345_8h_source.html#l00136">ADXL345_INT_WATERMARK</a>, <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8h_source.html#l00087">ADXL345_POWER_CTL_MEASURE</a>, <a class="el" href="adxl345_8h_source.html#l00118">ADXL345_RANGE_MASK</a>, <a class="el" href="adxl345_8c_source.html#l00081">adxl345_read_registers()</a>, <a class="el" href="adxl345_8h_source.html#l00066">ADXL345_REG_BW_RATE</a>, <a class="el" href="adxl345_8h_source.html#l00071">ADXL345_REG_DATA_FORMAT</a>, <a class="el" href="adxl345_8h_source.html#l00050">ADXL345_REG_DEVID</a>, <a class="el" href="adxl345_8h_source.html#l00078">ADXL345_REG_FIFO_CTL</a>, <a class="el" href="adxl345_8h_source.html#l00068">ADXL345_REG_INT_ENABLE</a>, <a class="el" href="adxl345_8h_source.html#l00069">ADXL345_REG_INT_MAP</a>, <a class="el" href="adxl345_8h_source.html#l00067">ADXL345_REG_POWER_CTL</a>, <a class="el" href="adxl345_8c_source.html#l00067">adxl345_write_register()</a>, <a class="el" href="adxl345_8h_source.html#l00162">adxl345_config_t::fifo_watermark_samples</a>, <a class="el" href="adxl345_8h_source.html#l00158">adxl345_config_t::full_resolution</a>, <a class="el" href="adxl345_8h_source.html#l00160">adxl345_config_t::low_power_mode</a>, <a class="el" href="adxl345_8h_source.html#l00157">adxl345_config_t::range</a>, <a class="el" href="adxl345_8h_source.html#l00159">adxl345_config_t::rate_code</a> y <a class="el" href="adxl345_8h_source.html#l00161">adxl345_config_t::use_fifo_stream</a>.</p>
+
+</div>
+</div>
+<a id="acaa7c94bbe85c988f061abb4654e7ab0" name="acaa7c94bbe85c988f061abb4654e7ab0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaa7c94bbe85c988f061abb4654e7ab0">&#9670;&#160;</a></span>adxl345_raw_to_mg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t adxl345_raw_to_mg </td>
+          <td>(</td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>raw</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>full_resolution</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>range</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convierte una lectura cruda a mili-g, segun el rango y modo de resolucion configurados. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">raw</td><td>Valor crudo de un eje (twos complement). </td></tr>
+    <tr><td class="paramname">full_resolution</td><td>true si el sensor esta en modo full-resolution. </td></tr>
+    <tr><td class="paramname">range</td><td>Rango configurado (ADXL345_RANGE_xxx), solo relevante si full_resolution es false. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>Aceleracion en mili-g (mg). </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00212">212</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00117">ADXL345_RANGE_16G</a>, <a class="el" href="adxl345_8h_source.html#l00114">ADXL345_RANGE_2G</a>, <a class="el" href="adxl345_8h_source.html#l00115">ADXL345_RANGE_4G</a>, <a class="el" href="adxl345_8h_source.html#l00116">ADXL345_RANGE_8G</a> y <a class="el" href="adxl345_8h_source.html#l00118">ADXL345_RANGE_MASK</a>.</p>
+
+</div>
+</div>
+<a id="a2213013aec58834c71da8dfb609c6231" name="a2213013aec58834c71da8dfb609c6231"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2213013aec58834c71da8dfb609c6231">&#9670;&#160;</a></span>adxl345_read_accel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_read_accel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structadxl345__accel__raw__t.html">adxl345_accel_raw_t</a> *</td>          <td class="paramname"><span class="paramname"><em>out</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee una muestra de aceleracion (X, Y, Z) mediante burst read de 6 bytes desde DATAX0. Si el FIFO esta habilitado, esto extrae la muestra mas antigua disponible. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">out</td><td>Puntero a estructura donde se almacenan los valores crudos. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00188">188</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8c_source.html#l00081">adxl345_read_registers()</a>, <a class="el" href="adxl345_8h_source.html#l00072">ADXL345_REG_DATAX0</a>, <a class="el" href="ble__hid__mcu_8c_source.html#l00954">status</a>, <a class="el" href="adxl345_8h_source.html#l00150">adxl345_accel_raw_t::x</a>, <a class="el" href="adxl345_8h_source.html#l00151">adxl345_accel_raw_t::y</a> y <a class="el" href="adxl345_8h_source.html#l00152">adxl345_accel_raw_t::z</a>.</p>
+
+</div>
+</div>
+<a id="a57b5c1606c416938562ca52858260e7f" name="a57b5c1606c416938562ca52858260e7f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57b5c1606c416938562ca52858260e7f">&#9670;&#160;</a></span>adxl345_read_registers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_read_registers </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>rx_buf</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Lee uno o mas registros consecutivos del ADXL345 (lectura en rafaga). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>Direccion de registro inicial. </td></tr>
+    <tr><td class="paramname">rx_buf</td><td>Buffer destino, debe tener al menos <span class="tt">length</span> bytes. </td></tr>
+    <tr><td class="paramname">length</td><td>Cantidad de registros/bytes a leer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00081">81</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00046">ADXL345_MULTIBYTE_BIT</a>, <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8h_source.html#l00044">ADXL345_READ_BIT</a>, <a class="el" href="adxl345_8h_source.html#l00031">ADXL345_SPI_DEVICE</a> y <a class="el" href="spi__mcu_8c_source.html#l00184">SpiReadWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00230">adxl345_get_fifo_entries()</a>, <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a> y <a class="el" href="adxl345_8c_source.html#l00188">adxl345_read_accel()</a>.</p>
+
+</div>
+</div>
+<a id="a059ed7986b5a373642ccf1f0d1ea13ef" name="a059ed7986b5a373642ccf1f0d1ea13ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a059ed7986b5a373642ccf1f0d1ea13ef">&#9670;&#160;</a></span>adxl345_standby()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_standby </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pone al sensor en modo standby (bajo consumo, 0.1 uA tipico), conservando el contenido del FIFO. Util para pausar el registro sin perder configuracion. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00246">246</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00067">ADXL345_REG_POWER_CTL</a> y <a class="el" href="adxl345_8c_source.html#l00067">adxl345_write_register()</a>.</p>
+
+</div>
+</div>
+<a id="ac4e75eeee2c00216f4deaf8701d5c91c" name="ac4e75eeee2c00216f4deaf8701d5c91c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4e75eeee2c00216f4deaf8701d5c91c">&#9670;&#160;</a></span>adxl345_wakeup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_wakeup </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Vuelve a modo medicion luego de un <a class="el" href="adxl345_8h.html#a059ed7986b5a373642ccf1f0d1ea13ef" title="Pone al sensor en modo standby (bajo consumo, 0.1 uA tipico), conservando el contenido del FIFO....">adxl345_standby()</a>. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00254">254</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00144">ADXL345_ERROR_SPI</a>, <a class="el" href="adxl345_8h_source.html#l00087">ADXL345_POWER_CTL_MEASURE</a>, <a class="el" href="adxl345_8h_source.html#l00067">ADXL345_REG_POWER_CTL</a> y <a class="el" href="adxl345_8c_source.html#l00067">adxl345_write_register()</a>.</p>
+
+</div>
+</div>
+<a id="ac64d93d2b3fa7055a0ef79096aa872a0" name="ac64d93d2b3fa7055a0ef79096aa872a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac64d93d2b3fa7055a0ef79096aa872a0">&#9670;&#160;</a></span>adxl345_write_register()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> adxl345_write_register </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Escribe un unico registro del ADXL345. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>Direccion de registro (0x00 - 0x39). </td></tr>
+    <tr><td class="paramname">value</td><td>Valor a escribir. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>ADXL345_OK o ADXL345_ERROR_SPI. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="adxl345_8c_source.html#l00067">67</a> del archivo <a class="el" href="adxl345_8c_source.html">adxl345.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="adxl345_8h_source.html#l00143">ADXL345_OK</a>, <a class="el" href="adxl345_8h_source.html#l00031">ADXL345_SPI_DEVICE</a>, <a class="el" href="adxl345_8h_source.html#l00045">ADXL345_WRITE_BIT</a> y <a class="el" href="spi__mcu_8c_source.html#l00145">SpiWrite()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="adxl345_8c_source.html#l00114">adxl345_init()</a>, <a class="el" href="adxl345_8c_source.html#l00246">adxl345_standby()</a> y <a class="el" href="adxl345_8c_source.html#l00254">adxl345_wakeup()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_2602097dce81420f4880be8af28b7cd8.html">src</a></li><li class="navelem"><a href="adxl345_8c.html">adxl345.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

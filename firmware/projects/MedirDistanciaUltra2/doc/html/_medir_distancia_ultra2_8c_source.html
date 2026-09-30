@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Medir Distancia por Ultrasonido V2: Archivo de código fuente C:/Users/faust/Barbagelata_2C_2026/firmware/projects/MedirDistanciaUltra2/main/MedirDistanciaUltra2.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Medir Distancia por Ultrasonido V2
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_medir_distancia_ultra2_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">MedirDistanciaUltra2.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_medir_distancia_ultra2_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span><span class="comment">/*==================[inclusions]=============================================*/</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#include &quot;<a class="code" href="led_8h.html">led.h</a>&quot;</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#include &quot;<a class="code" href="hc__sr04_8h.html">hc_sr04.h</a>&quot;</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#include &quot;<a class="code" href="lcditse0803_8h.html">lcditse0803.h</a>&quot;</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#include &quot;<a class="code" href="switch_8h.html">switch.h</a>&quot;</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#include &quot;<a class="code" href="timer__mcu_8h.html">timer_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="comment">/*==================[macros and definitions]=================================*/</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#a4d8b564a5928083f2e62a4e00678d8de">  101</a></span><span class="preprocessor">#define CONFIG_PERIOD_MEDICION_US 1000000</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span><span class="comment">/*==================[internal data definition]===============================*/</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#a7c284698ae3c18ee6d8d8e6569868791">  105</a></span>TaskHandle_t <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a7c284698ae3c18ee6d8d8e6569868791">read_ultra_task_handle</a> = NULL;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#a369d96c3d0a72104003fc9c9ca9b0742">  107</a></span>TaskHandle_t <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a369d96c3d0a72104003fc9c9ca9b0742">leds_lcd_task_handle</a> = NULL;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="comment">// Variables Globales</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#a1de2fbaf9babae6011af601f45ed320a">  111</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a1de2fbaf9babae6011af601f45ed320a">MEDIR</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#afc247b5bf8f971ed6ea450caf1c76e37">  113</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#afc247b5bf8f971ed6ea450caf1c76e37">HOLD</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">  115</a></span>uint16_t <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a> = 0;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span><span class="comment">/*==================[internal functions declaration]========= ===============*/</span></div>
+<div class="foldopen" id="foldopen00121" data-start="{" data-end="}">
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#aab1e10a2cce5bd8cfbfb85777c891dcf">  121</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_medir_distancia_ultra2_8c.html#aab1e10a2cce5bd8cfbfb85777c891dcf">FuncTEC1</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a1de2fbaf9babae6011af601f45ed320a">MEDIR</a> = !<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a1de2fbaf9babae6011af601f45ed320a">MEDIR</a>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span></div>
+<div class="foldopen" id="foldopen00128" data-start="{" data-end="}">
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#ade7d63c810b361ae952d436e9315c19d">  128</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_medir_distancia_ultra2_8c.html#ade7d63c810b361ae952d436e9315c19d">FuncTEC2</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#afc247b5bf8f971ed6ea450caf1c76e37">HOLD</a> = !<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#afc247b5bf8f971ed6ea450caf1c76e37">HOLD</a>;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span></div>
+<div class="foldopen" id="foldopen00138" data-start="{" data-end="}">
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#aab7971084fe6c1a5efd403565e405321">  138</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_medir_distancia_ultra2_8c.html#aab7971084fe6c1a5efd403565e405321">FuncTimerMedicion</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    vTaskNotifyGiveFromISR(<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a7c284698ae3c18ee6d8d8e6569868791">read_ultra_task_handle</a>, pdFALSE);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    vTaskNotifyGiveFromISR(<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a369d96c3d0a72104003fc9c9ca9b0742">leds_lcd_task_handle</a>, pdFALSE);</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>}</div>
+</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span></div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span><span class="keyword">static</span> <span class="keywordtype">void</span> ReadUltraTask(<span class="keywordtype">void</span> *pvParameter) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a1de2fbaf9babae6011af601f45ed320a">MEDIR</a>) {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>            <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a> = <a class="code hl_function" href="group___h_c___s_r04.html#ga73a5aaa2183e55d104d4e0c2c435e251">HcSr04ReadDistanceInCentimeters</a>();</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>    }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>}</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span></div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span><span class="keyword">static</span> <span class="keywordtype">void</span> LedsAndLcdTask(<span class="keywordtype">void</span> *pvParameter) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <a class="code hl_function" href="group___l_c_d___i_t_s_e0803.html#gae84766fe1e3b5550b1ca4bbc70f00504">LcdItsE0803Off</a>();</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a1de2fbaf9babae6011af601f45ed320a">MEDIR</a>) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a> &lt; 10) {</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>                <a class="code hl_function" href="group___l_e_d.html#gafcc4fefa23689ea53feedb349c8a9eb6">LedsOffAll</a>();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a> &gt;= 10 &amp;&amp; <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a> &lt; 20) {</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                <a class="code hl_function" href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a11a9adb9054de1fe01d6a6750075f57b">LED_1</a>);</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                <a class="code hl_function" href="group___l_e_d.html#ga4fd07c9f7fab15d0d07389a38f4a39d8">LedOff</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a00af6b2437d9982f1f125d2cc2537c41">LED_2</a>);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                <a class="code hl_function" href="group___l_e_d.html#ga4fd07c9f7fab15d0d07389a38f4a39d8">LedOff</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a3e1b1af0f74f675e4eb7bd18229adfd3">LED_3</a>);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a> &gt;= 20 &amp;&amp; <a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a> &lt;= 30) {</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                <a class="code hl_function" href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a11a9adb9054de1fe01d6a6750075f57b">LED_1</a>);</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                <a class="code hl_function" href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a00af6b2437d9982f1f125d2cc2537c41">LED_2</a>);</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>                <a class="code hl_function" href="group___l_e_d.html#ga4fd07c9f7fab15d0d07389a38f4a39d8">LedOff</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a3e1b1af0f74f675e4eb7bd18229adfd3">LED_3</a>);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a> &gt; 30) {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>                <a class="code hl_function" href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a11a9adb9054de1fe01d6a6750075f57b">LED_1</a>);</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>                <a class="code hl_function" href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a00af6b2437d9982f1f125d2cc2537c41">LED_2</a>);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>                <a class="code hl_function" href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a3e1b1af0f74f675e4eb7bd18229adfd3">LED_3</a>);</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#afc247b5bf8f971ed6ea450caf1c76e37">HOLD</a>) {</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>                <a class="code hl_function" href="group___l_c_d___i_t_s_e0803.html#ga77a9887ee733d3212c3e4996c47f1b9d">LcdItsE0803Write</a>(<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a>);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>            }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>            <a class="code hl_function" href="group___l_e_d.html#gafcc4fefa23689ea53feedb349c8a9eb6">LedsOffAll</a>();</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>            <span class="keywordflow">if</span> (!<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#afc247b5bf8f971ed6ea450caf1c76e37">HOLD</a>) {</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>                <a class="code hl_function" href="group___l_c_d___i_t_s_e0803.html#gae84766fe1e3b5550b1ca4bbc70f00504">LcdItsE0803Off</a>();</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>            }</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        }</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    }</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>}</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="comment">/*==================[external functions definition]==========================*/</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span></div>
+<div class="foldopen" id="foldopen00210" data-start="{" data-end="}">
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno"><a class="line" href="_medir_distancia_ultra2_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">  210</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="_medir_distancia_ultra2_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    <a class="code hl_function" href="group___l_e_d.html#gacba669c3e8f52e45d1bea50c2e63b250">LedsInit</a>();</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <a class="code hl_function" href="group___switch.html#ga8eb2865a73bf2d2b9fd6760958a0cc3c">SwitchesInit</a>();</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <a class="code hl_function" href="group___h_c___s_r04.html#ga9d26cc017fe45c607d08231ebffb46c4">HcSr04Init</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71">GPIO_3</a>, <a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393abbea21b656f1917800d9d279b685f38e">GPIO_2</a>); <span class="comment">// ECHO = GPIO_3, TRIGGER = GPIO_2</span></div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <a class="code hl_function" href="group___l_c_d___i_t_s_e0803.html#ga1c08a1458380c8f0a02a3763d14c8bf3">LcdItsE0803Init</a>();</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    <span class="comment">// Configuración de Interrupciones para las Teclas TEC1 y TEC2</span></div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <a class="code hl_function" href="group___switch.html#ga9847b9081e3cb39dd3ec01eaee8323b2">SwitchActivInt</a>(<a class="code hl_enumvalue" href="group___switch.html#gga8caa2df6d25fea5a14eb4533df1d5cfaa24caa46485c5fec2211b3ebd8a1eee77">SWITCH_1</a>, &amp;<a class="code hl_function" href="_medir_distancia_ultra2_8c.html#aab1e10a2cce5bd8cfbfb85777c891dcf">FuncTEC1</a>, NULL);</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <a class="code hl_function" href="group___switch.html#ga9847b9081e3cb39dd3ec01eaee8323b2">SwitchActivInt</a>(<a class="code hl_enumvalue" href="group___switch.html#gga8caa2df6d25fea5a14eb4533df1d5cfaa73fda67835d5d51aa9251fee781a7434">SWITCH_2</a>, &amp;<a class="code hl_function" href="_medir_distancia_ultra2_8c.html#ade7d63c810b361ae952d436e9315c19d">FuncTEC2</a>, NULL);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    <span class="comment">// Creación de Tareas FreeRTOS</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    xTaskCreate(&amp;ReadUltraTask, <span class="stringliteral">&quot;ReadUltraTask&quot;</span>, 2048, NULL, 5, &amp;<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a7c284698ae3c18ee6d8d8e6569868791">read_ultra_task_handle</a>);</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    xTaskCreate(&amp;LedsAndLcdTask, <span class="stringliteral">&quot;LedsAndLcdTask&quot;</span>, 2048, NULL, 5, &amp;<a class="code hl_variable" href="_medir_distancia_ultra2_8c.html#a369d96c3d0a72104003fc9c9ca9b0742">leds_lcd_task_handle</a>);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="comment">// Configuración e Inicialización del Timer A de Hardware (1 segundo)</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    <span class="comment">// Para otras aplicaciones podriamos usar mas de un Timer, en este caso no tiene sentido</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="comment">// hacer 2 distintos con el mismo periodo asi que solo usamos 1.</span></div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <a class="code hl_struct" href="structtimer__config__t.html">timer_config_t</a> timer_medicion = {</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        .timer = <a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a>,</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        .period = <a class="code hl_define" href="_medir_distancia_ultra2_8c.html#a4d8b564a5928083f2e62a4e00678d8de">CONFIG_PERIOD_MEDICION_US</a>,</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        .func_p = <a class="code hl_function" href="_medir_distancia_ultra2_8c.html#aab7971084fe6c1a5efd403565e405321">FuncTimerMedicion</a>,</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>        .param_p = NULL</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    };</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_medicion);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>    <a class="code hl_function" href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a>(timer_medicion.<a class="code hl_variable" href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer</a>);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>}</div>
+</div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_a1de2fbaf9babae6011af601f45ed320a"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#a1de2fbaf9babae6011af601f45ed320a">MEDIR</a></div><div class="ttdeci">bool MEDIR</div><div class="ttdoc">Estado de la medición: true = midiendo, false = detenida (TEC1).</div><div class="ttdef"><b>Definition</b> <a href="#l00111">MedirDistanciaUltra2.c:111</a></div></div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_a369d96c3d0a72104003fc9c9ca9b0742"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#a369d96c3d0a72104003fc9c9ca9b0742">leds_lcd_task_handle</a></div><div class="ttdeci">TaskHandle_t leds_lcd_task_handle</div><div class="ttdoc">Handle de la tarea que actualiza LEDs y display LCD.</div><div class="ttdef"><b>Definition</b> <a href="#l00107">MedirDistanciaUltra2.c:107</a></div></div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_a4d8b564a5928083f2e62a4e00678d8de"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#a4d8b564a5928083f2e62a4e00678d8de">CONFIG_PERIOD_MEDICION_US</a></div><div class="ttdeci">#define CONFIG_PERIOD_MEDICION_US</div><div class="ttdoc">Período del timer de medición en microsegundos (1 s).</div><div class="ttdef"><b>Definition</b> <a href="#l00101">MedirDistanciaUltra2.c:101</a></div></div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_a630544a7f0a2cc40d8a7fefab7e2fe70"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a></div><div class="ttdeci">void app_main(void)</div><div class="ttdoc">Función principal de la aplicación.</div><div class="ttdef"><b>Definition</b> <a href="#l00210">MedirDistanciaUltra2.c:210</a></div></div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_a7c284698ae3c18ee6d8d8e6569868791"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#a7c284698ae3c18ee6d8d8e6569868791">read_ultra_task_handle</a></div><div class="ttdeci">TaskHandle_t read_ultra_task_handle</div><div class="ttdoc">Handle de la tarea de medición con el HC-SR04.</div><div class="ttdef"><b>Definition</b> <a href="#l00105">MedirDistanciaUltra2.c:105</a></div></div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_aab1e10a2cce5bd8cfbfb85777c891dcf"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#aab1e10a2cce5bd8cfbfb85777c891dcf">FuncTEC1</a></div><div class="ttdeci">void FuncTEC1(void *param)</div><div class="ttdoc">Callback de la interrupción de TEC1: activa/detiene la medición.</div><div class="ttdef"><b>Definition</b> <a href="#l00121">MedirDistanciaUltra2.c:121</a></div></div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_aab7971084fe6c1a5efd403565e405321"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#aab7971084fe6c1a5efd403565e405321">FuncTimerMedicion</a></div><div class="ttdeci">void FuncTimerMedicion(void *param)</div><div class="ttdoc">Callback del TIMER_A (cada 1 s), ejecutado en contexto de interrupción.</div><div class="ttdef"><b>Definition</b> <a href="#l00138">MedirDistanciaUltra2.c:138</a></div></div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_ade7d63c810b361ae952d436e9315c19d"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#ade7d63c810b361ae952d436e9315c19d">FuncTEC2</a></div><div class="ttdeci">void FuncTEC2(void *param)</div><div class="ttdoc">Callback de la interrupción de TEC2: activa/desactiva el HOLD.</div><div class="ttdef"><b>Definition</b> <a href="#l00128">MedirDistanciaUltra2.c:128</a></div></div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_afc247b5bf8f971ed6ea450caf1c76e37"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#afc247b5bf8f971ed6ea450caf1c76e37">HOLD</a></div><div class="ttdeci">bool HOLD</div><div class="ttdoc">Estado de HOLD: true = valor del LCD congelado (TEC2).</div><div class="ttdef"><b>Definition</b> <a href="#l00113">MedirDistanciaUltra2.c:113</a></div></div>
+<div class="ttc" id="a_medir_distancia_ultra2_8c_html_aff49de2782e838ee81247e09cc13b23c"><div class="ttname"><a href="_medir_distancia_ultra2_8c.html#aff49de2782e838ee81247e09cc13b23c">DISTANCIA</a></div><div class="ttdeci">uint16_t DISTANCIA</div><div class="ttdoc">Última distancia medida, en centímetros.</div><div class="ttdef"><b>Definition</b> <a href="#l00115">MedirDistanciaUltra2.c:115</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71"><div class="ttname"><a href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71">GPIO_3</a></div><div class="ttdeci">@ GPIO_3</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00055">gpio_mcu.h:55</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ggaf65604147d0244c9b13cfdc865ad5393abbea21b656f1917800d9d279b685f38e"><div class="ttname"><a href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393abbea21b656f1917800d9d279b685f38e">GPIO_2</a></div><div class="ttdeci">@ GPIO_2</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00054">gpio_mcu.h:54</a></div></div>
+<div class="ttc" id="agroup___h_c___s_r04_html_ga73a5aaa2183e55d104d4e0c2c435e251"><div class="ttname"><a href="group___h_c___s_r04.html#ga73a5aaa2183e55d104d4e0c2c435e251">HcSr04ReadDistanceInCentimeters</a></div><div class="ttdeci">uint16_t HcSr04ReadDistanceInCentimeters(void)</div><div class="ttdoc">Read distance.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8c_source.html#l00045">hc_sr04.c:45</a></div></div>
+<div class="ttc" id="agroup___h_c___s_r04_html_ga9d26cc017fe45c607d08231ebffb46c4"><div class="ttname"><a href="group___h_c___s_r04.html#ga9d26cc017fe45c607d08231ebffb46c4">HcSr04Init</a></div><div class="ttdeci">bool HcSr04Init(gpio_t echo, gpio_t trigger)</div><div class="ttdoc">Driver for reading distance with HC-SR04 module.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8c_source.html#l00034">hc_sr04.c:34</a></div></div>
+<div class="ttc" id="agroup___l_c_d___i_t_s_e0803_html_ga1c08a1458380c8f0a02a3763d14c8bf3"><div class="ttname"><a href="group___l_c_d___i_t_s_e0803.html#ga1c08a1458380c8f0a02a3763d14c8bf3">LcdItsE0803Init</a></div><div class="ttdeci">bool LcdItsE0803Init(void)</div><div class="ttdoc">Driver for using the 3 digits numeric display in ESP-EDU.</div><div class="ttdef"><b>Definition</b> <a href="lcditse0803_8c_source.html#l00037">lcditse0803.c:37</a></div></div>
+<div class="ttc" id="agroup___l_c_d___i_t_s_e0803_html_ga77a9887ee733d3212c3e4996c47f1b9d"><div class="ttname"><a href="group___l_c_d___i_t_s_e0803.html#ga77a9887ee733d3212c3e4996c47f1b9d">LcdItsE0803Write</a></div><div class="ttdeci">bool LcdItsE0803Write(uint16_t value)</div><div class="ttdoc">Function to display value a LCD Module for EDU-CIAA.</div><div class="ttdef"><b>Definition</b> <a href="lcditse0803_8c_source.html#l00054">lcditse0803.c:54</a></div></div>
+<div class="ttc" id="agroup___l_c_d___i_t_s_e0803_html_gae84766fe1e3b5550b1ca4bbc70f00504"><div class="ttname"><a href="group___l_c_d___i_t_s_e0803.html#gae84766fe1e3b5550b1ca4bbc70f00504">LcdItsE0803Off</a></div><div class="ttdeci">void LcdItsE0803Off(void)</div><div class="ttdoc">Turn off display.</div><div class="ttdef"><b>Definition</b> <a href="lcditse0803_8c_source.html#l00087">lcditse0803.c:87</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_ga4fd07c9f7fab15d0d07389a38f4a39d8"><div class="ttname"><a href="group___l_e_d.html#ga4fd07c9f7fab15d0d07389a38f4a39d8">LedOff</a></div><div class="ttdeci">uint8_t LedOff(led_t led)</div><div class="ttdoc">Turn off a specific LED.</div><div class="ttdef"><b>Definition</b> <a href="led_8c_source.html#l00065">led.c:65</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_ga883021aaef65f080a52b1852172ecbc3"><div class="ttname"><a href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a></div><div class="ttdeci">uint8_t LedOn(led_t led)</div><div class="ttdoc">Turn on a specific LED.</div><div class="ttdef"><b>Definition</b> <a href="led_8c_source.html#l00046">led.c:46</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_gacba669c3e8f52e45d1bea50c2e63b250"><div class="ttname"><a href="group___l_e_d.html#gacba669c3e8f52e45d1bea50c2e63b250">LedsInit</a></div><div class="ttdeci">uint8_t LedsInit(void)</div><div class="ttdoc">ESP-EDU LEDs initialization.</div><div class="ttdef"><b>Definition</b> <a href="led_8c_source.html#l00031">led.c:31</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_gafcc4fefa23689ea53feedb349c8a9eb6"><div class="ttname"><a href="group___l_e_d.html#gafcc4fefa23689ea53feedb349c8a9eb6">LedsOffAll</a></div><div class="ttdeci">uint8_t LedsOffAll(void)</div><div class="ttdoc">Turn off all LEDs.</div><div class="ttdef"><b>Definition</b> <a href="led_8c_source.html#l00105">led.c:105</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_ggab6831a7d06c0a2bc69f9b024f6445a80a00af6b2437d9982f1f125d2cc2537c41"><div class="ttname"><a href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a00af6b2437d9982f1f125d2cc2537c41">LED_2</a></div><div class="ttdeci">@ LED_2</div><div class="ttdef"><b>Definition</b> <a href="led_8h_source.html#l00033">led.h:33</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_ggab6831a7d06c0a2bc69f9b024f6445a80a11a9adb9054de1fe01d6a6750075f57b"><div class="ttname"><a href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a11a9adb9054de1fe01d6a6750075f57b">LED_1</a></div><div class="ttdeci">@ LED_1</div><div class="ttdef"><b>Definition</b> <a href="led_8h_source.html#l00034">led.h:34</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_ggab6831a7d06c0a2bc69f9b024f6445a80a3e1b1af0f74f675e4eb7bd18229adfd3"><div class="ttname"><a href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a3e1b1af0f74f675e4eb7bd18229adfd3">LED_3</a></div><div class="ttdeci">@ LED_3</div><div class="ttdef"><b>Definition</b> <a href="led_8h_source.html#l00032">led.h:32</a></div></div>
+<div class="ttc" id="agroup___switch_html_ga8eb2865a73bf2d2b9fd6760958a0cc3c"><div class="ttname"><a href="group___switch.html#ga8eb2865a73bf2d2b9fd6760958a0cc3c">SwitchesInit</a></div><div class="ttdeci">int8_t SwitchesInit(void)</div><div class="ttdoc">ESP-EDU switches initialization.</div><div class="ttdef"><b>Definition</b> <a href="switch_8c_source.html#l00029">switch.c:29</a></div></div>
+<div class="ttc" id="agroup___switch_html_ga9847b9081e3cb39dd3ec01eaee8323b2"><div class="ttname"><a href="group___switch.html#ga9847b9081e3cb39dd3ec01eaee8323b2">SwitchActivInt</a></div><div class="ttdeci">void SwitchActivInt(switch_t tec, void *ptrIntFunc, void *args)</div><div class="ttdoc">Enables the interruption of a particular key and assigns a callback function.</div><div class="ttdef"><b>Definition</b> <a href="switch_8c_source.html#l00047">switch.c:47</a></div></div>
+<div class="ttc" id="agroup___switch_html_gga8caa2df6d25fea5a14eb4533df1d5cfaa24caa46485c5fec2211b3ebd8a1eee77"><div class="ttname"><a href="group___switch.html#gga8caa2df6d25fea5a14eb4533df1d5cfaa24caa46485c5fec2211b3ebd8a1eee77">SWITCH_1</a></div><div class="ttdeci">@ SWITCH_1</div><div class="ttdef"><b>Definition</b> <a href="switch_8h_source.html#l00032">switch.h:32</a></div></div>
+<div class="ttc" id="agroup___switch_html_gga8caa2df6d25fea5a14eb4533df1d5cfaa73fda67835d5d51aa9251fee781a7434"><div class="ttname"><a href="group___switch.html#gga8caa2df6d25fea5a14eb4533df1d5cfaa73fda67835d5d51aa9251fee781a7434">SWITCH_2</a></div><div class="ttdeci">@ SWITCH_2</div><div class="ttdef"><b>Definition</b> <a href="switch_8h_source.html#l00033">switch.h:33</a></div></div>
+<div class="ttc" id="agroup___timer_html_ga0b1779c5b8f91cc83c8bfd127071ea2f"><div class="ttname"><a href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a></div><div class="ttdeci">void TimerStart(timer_mcu_t timer)</div><div class="ttdoc">Start timer count.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00116">timer_mcu.c:116</a></div></div>
+<div class="ttc" id="agroup___timer_html_gae8617c0d176463a60441464ad26563f6"><div class="ttname"><a href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a></div><div class="ttdeci">void TimerInit(timer_config_t *timer_ini)</div><div class="ttdoc">Timer initialization.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00067">timer_mcu.c:67</a></div></div>
+<div class="ttc" id="agroup___timer_html_ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598"><div class="ttname"><a href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a></div><div class="ttdeci">@ TIMER_A</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00032">timer_mcu.h:32</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html"><div class="ttname"><a href="hc__sr04_8h.html">hc_sr04.h</a></div></div>
+<div class="ttc" id="alcditse0803_8h_html"><div class="ttname"><a href="lcditse0803_8h.html">lcditse0803.h</a></div></div>
+<div class="ttc" id="aled_8h_html"><div class="ttname"><a href="led_8h.html">led.h</a></div></div>
+<div class="ttc" id="astructtimer__config__t_html"><div class="ttname"><a href="structtimer__config__t.html">timer_config_t</a></div><div class="ttdoc">Timer configuration struct.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00039">timer_mcu.h:39</a></div></div>
+<div class="ttc" id="astructtimer__config__t_html_ab83043b8038c5e630f6a2a05ea007e49"><div class="ttname"><a href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer_config_t::timer</a></div><div class="ttdeci">timer_mcu_t timer</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00040">timer_mcu.h:40</a></div></div>
+<div class="ttc" id="aswitch_8h_html"><div class="ttname"><a href="switch_8h.html">switch.h</a></div></div>
+<div class="ttc" id="atimer__mcu_8h_html"><div class="ttname"><a href="timer__mcu_8h.html">timer_mcu.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a href="dir_0cac430d6b2139afdb0242e5a40aa1e4.html">MedirDistanciaUltra2</a></li><li class="navelem"><a href="dir_646dfb20f5c76ff858ccaec9abce11e2.html">main</a></li><li class="navelem"><a href="_medir_distancia_ultra2_8c.html">MedirDistanciaUltra2.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

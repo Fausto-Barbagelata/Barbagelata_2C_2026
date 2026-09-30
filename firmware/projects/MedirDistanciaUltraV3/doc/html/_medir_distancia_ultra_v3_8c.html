@@ -1,0 +1,584 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Medir Distancia por Ultrasonido V3: Referencia del archivo C:/Users/faust/Barbagelata_2C_2026/firmware/projects/MedirDistanciaUltraV3/main/MedirDistanciaUltraV3.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Medir Distancia por Ultrasonido V3
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('_medir_distancia_ultra_v3_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo MedirDistanciaUltraV3.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Actividad 3 - Medidor de distancia por ultrasonido con interrupciones y puerto serie.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lcditse0803_8h_source.html">lcditse0803.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="switch_8h_source.html">switch.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer__mcu_8h_source.html">timer_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+</div>
+<p><a href="_medir_distancia_ultra_v3_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a4a1251ed8189be20eb0f4179dbc1839a" id="r_a4a1251ed8189be20eb0f4179dbc1839a"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a4a1251ed8189be20eb0f4179dbc1839a">CONFIG_PERIOD_MEDICION_US_INIT</a>&#160;&#160;&#160;1000000</td></tr>
+<tr class="memdesc:a4a1251ed8189be20eb0f4179dbc1839a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Período inicial de medición en microsegundos (1 s).  <br /></td></tr>
+<tr class="memitem:aef5bf564cff4d400433946b1a143dec3" id="r_aef5bf564cff4d400433946b1a143dec3"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#aef5bf564cff4d400433946b1a143dec3">CONFIG_PERIOD_MIN_US</a>&#160;&#160;&#160;100000</td></tr>
+<tr class="memdesc:aef5bf564cff4d400433946b1a143dec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Período mínimo de medición en microsegundos (100 ms).  <br /></td></tr>
+<tr class="memitem:a8e3ed4ca6337229f57983c38f3fa5ecc" id="r_a8e3ed4ca6337229f57983c38f3fa5ecc"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#a8e3ed4ca6337229f57983c38f3fa5ecc">CONFIG_PERIOD_STEP_US</a>&#160;&#160;&#160;100000</td></tr>
+<tr class="memdesc:a8e3ed4ca6337229f57983c38f3fa5ecc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Paso de ajuste del período de medición en microsegundos (100 ms).  <br /></td></tr>
+<tr class="memitem:ab35fbfa532786b9f2d84f455f7c49eae" id="r_ab35fbfa532786b9f2d84f455f7c49eae"><td class="memItemLeft">#define&#160;</td><td class="memItemRight"><a class="el" href="#ab35fbfa532786b9f2d84f455f7c49eae">CONFIG_UART_BAUDRATE</a>&#160;&#160;&#160;115200</td></tr>
+<tr class="memdesc:ab35fbfa532786b9f2d84f455f7c49eae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Velocidad de la UART hacia la PC, en baudios.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:aab1e10a2cce5bd8cfbfb85777c891dcf" id="r_aab1e10a2cce5bd8cfbfb85777c891dcf"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aab1e10a2cce5bd8cfbfb85777c891dcf">FuncTEC1</a> (void *param)</td></tr>
+<tr class="memdesc:aab1e10a2cce5bd8cfbfb85777c891dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback de la interrupción de TEC1: activa/detiene la medición.  <br /></td></tr>
+<tr class="memitem:ade7d63c810b361ae952d436e9315c19d" id="r_ade7d63c810b361ae952d436e9315c19d"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ade7d63c810b361ae952d436e9315c19d">FuncTEC2</a> (void *param)</td></tr>
+<tr class="memdesc:ade7d63c810b361ae952d436e9315c19d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback de la interrupción de TEC2: activa/desactiva el HOLD.  <br /></td></tr>
+<tr class="memitem:a188145c83d9f16e1c8eee4248066a265" id="r_a188145c83d9f16e1c8eee4248066a265"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a188145c83d9f16e1c8eee4248066a265">FuncUART</a> (void *param)</td></tr>
+<tr class="memdesc:a188145c83d9f16e1c8eee4248066a265"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback de recepción de la UART conectada a la PC.  <br /></td></tr>
+<tr class="memitem:aab7971084fe6c1a5efd403565e405321" id="r_aab7971084fe6c1a5efd403565e405321"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aab7971084fe6c1a5efd403565e405321">FuncTimerMedicion</a> (void *param)</td></tr>
+<tr class="memdesc:aab7971084fe6c1a5efd403565e405321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback del TIMER_A, ejecutado en contexto de interrupción.  <br /></td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="memdesc:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función principal de la aplicación.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7c284698ae3c18ee6d8d8e6569868791" id="r_a7c284698ae3c18ee6d8d8e6569868791"><td class="memItemLeft">TaskHandle_t&#160;</td><td class="memItemRight"><a class="el" href="#a7c284698ae3c18ee6d8d8e6569868791">read_ultra_task_handle</a> = NULL</td></tr>
+<tr class="memdesc:a7c284698ae3c18ee6d8d8e6569868791"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle de la tarea de medición con el HC-SR04.  <br /></td></tr>
+<tr class="memitem:a369d96c3d0a72104003fc9c9ca9b0742" id="r_a369d96c3d0a72104003fc9c9ca9b0742"><td class="memItemLeft">TaskHandle_t&#160;</td><td class="memItemRight"><a class="el" href="#a369d96c3d0a72104003fc9c9ca9b0742">leds_lcd_task_handle</a> = NULL</td></tr>
+<tr class="memdesc:a369d96c3d0a72104003fc9c9ca9b0742"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle de la tarea que actualiza <a class="el" href="group___l_e_d.html#gab6831a7d06c0a2bc69f9b024f6445a80" title="LED driver for the ESP-EDU Board.">LEDs</a>, LCD y UART.  <br /></td></tr>
+<tr class="memitem:a750f32ce5c5bf53c0964f126de9d490f" id="r_a750f32ce5c5bf53c0964f126de9d490f"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a750f32ce5c5bf53c0964f126de9d490f">medir</a> = true</td></tr>
+<tr class="memdesc:a750f32ce5c5bf53c0964f126de9d490f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado de la medición: true = midiendo, false = detenida (TEC1 / tecla 'O').  <br /></td></tr>
+<tr class="memitem:af0129e079b57e897edf00f22cc25f3d4" id="r_af0129e079b57e897edf00f22cc25f3d4"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#af0129e079b57e897edf00f22cc25f3d4">hold</a> = false</td></tr>
+<tr class="memdesc:af0129e079b57e897edf00f22cc25f3d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado de HOLD: true = LCD y UART congelados (TEC2 / tecla 'H').  <br /></td></tr>
+<tr class="memitem:a8112dcf7a0d13f2c6ef8571923feb897" id="r_a8112dcf7a0d13f2c6ef8571923feb897"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#a8112dcf7a0d13f2c6ef8571923feb897">en_pulgadas</a> = false</td></tr>
+<tr class="memdesc:a8112dcf7a0d13f2c6ef8571923feb897"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unidad de visualización: false = cm, true = pulgadas (tecla 'I').  <br /></td></tr>
+<tr class="memitem:ab823edc0d77f7509f223abd5d11c3553" id="r_ab823edc0d77f7509f223abd5d11c3553"><td class="memItemLeft">bool&#160;</td><td class="memItemRight"><a class="el" href="#ab823edc0d77f7509f223abd5d11c3553">mostrar_max</a> = false</td></tr>
+<tr class="memdesc:ab823edc0d77f7509f223abd5d11c3553"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor a mostrar: false = valor actual, true = valor máximo (tecla 'M').  <br /></td></tr>
+<tr class="memitem:aec40b15ff3098bdb2425eb4dc9c11a18" id="r_aec40b15ff3098bdb2425eb4dc9c11a18"><td class="memItemLeft">uint16_t&#160;</td><td class="memItemRight"><a class="el" href="#aec40b15ff3098bdb2425eb4dc9c11a18">distancia</a> = 0</td></tr>
+<tr class="memdesc:aec40b15ff3098bdb2425eb4dc9c11a18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Última distancia medida, en centímetros.  <br /></td></tr>
+<tr class="memitem:aa44c6c89e1f5a5fbb9436d00607f884d" id="r_aa44c6c89e1f5a5fbb9436d00607f884d"><td class="memItemLeft">uint16_t&#160;</td><td class="memItemRight"><a class="el" href="#aa44c6c89e1f5a5fbb9436d00607f884d">distancia_max</a> = 0</td></tr>
+<tr class="memdesc:aa44c6c89e1f5a5fbb9436d00607f884d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Máxima distancia medida, en centímetros.  <br /></td></tr>
+<tr class="memitem:a5d4fea00a200cf7759b0c9e1f01858e1" id="r_a5d4fea00a200cf7759b0c9e1f01858e1"><td class="memItemLeft">uint32_t&#160;</td><td class="memItemRight"><a class="el" href="#a5d4fea00a200cf7759b0c9e1f01858e1">periodo_medicion_us</a> = <a class="el" href="#a4a1251ed8189be20eb0f4179dbc1839a">CONFIG_PERIOD_MEDICION_US_INIT</a></td></tr>
+<tr class="memdesc:a5d4fea00a200cf7759b0c9e1f01858e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Período actual del timer de medición, en microsegundos (modificable con 'F' y 'S').  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Actividad 3 - Medidor de distancia por ultrasonido con interrupciones y puerto serie. </p>
+
+<p class="definition">Definición en el archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+</div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a4a1251ed8189be20eb0f4179dbc1839a" name="a4a1251ed8189be20eb0f4179dbc1839a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a1251ed8189be20eb0f4179dbc1839a">&#9670;&#160;</a></span>CONFIG_PERIOD_MEDICION_US_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_PERIOD_MEDICION_US_INIT&#160;&#160;&#160;1000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Período inicial de medición en microsegundos (1 s). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00115">115</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+</div>
+</div>
+<a id="aef5bf564cff4d400433946b1a143dec3" name="aef5bf564cff4d400433946b1a143dec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef5bf564cff4d400433946b1a143dec3">&#9670;&#160;</a></span>CONFIG_PERIOD_MIN_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_PERIOD_MIN_US&#160;&#160;&#160;100000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Período mínimo de medición en microsegundos (100 ms). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00117">117</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="a8e3ed4ca6337229f57983c38f3fa5ecc" name="a8e3ed4ca6337229f57983c38f3fa5ecc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e3ed4ca6337229f57983c38f3fa5ecc">&#9670;&#160;</a></span>CONFIG_PERIOD_STEP_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_PERIOD_STEP_US&#160;&#160;&#160;100000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Paso de ajuste del período de medición en microsegundos (100 ms). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00119">119</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="ab35fbfa532786b9f2d84f455f7c49eae" name="ab35fbfa532786b9f2d84f455f7c49eae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab35fbfa532786b9f2d84f455f7c49eae">&#9670;&#160;</a></span>CONFIG_UART_BAUDRATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONFIG_UART_BAUDRATE&#160;&#160;&#160;115200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Velocidad de la UART hacia la PC, en baudios. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00121">121</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00339">app_main()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función principal de la aplicación. </p>
+<p>Inicializa <a class="el" href="group___l_e_d.html#gab6831a7d06c0a2bc69f9b024f6445a80" title="LED driver for the ESP-EDU Board.">LEDs</a>, teclas, HC-SR04 (ECHO = GPIO_3, TRIGGER = GPIO_2) y LCD; habilita las interrupciones de TEC1 y TEC2; inicializa la UART_PC a <a class="el" href="#ab35fbfa532786b9f2d84f455f7c49eae" title="CONFIG_UART_BAUDRATE">CONFIG_UART_BAUDRATE</a> con <a class="el" href="#a188145c83d9f16e1c8eee4248066a265" title="FuncUART">FuncUART</a> como callback de recepción; crea las tareas de FreeRTOS y arranca el TIMER_A con el período inicial <a class="el" href="#a5d4fea00a200cf7759b0c9e1f01858e1" title="periodo_medicion_us">periodo_medicion_us</a>. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00339">339</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00121">CONFIG_UART_BAUDRATE</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00154">FuncTEC1()</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00161">FuncTEC2()</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00241">FuncTimerMedicion()</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>, <a class="el" href="gpio__mcu_8h_source.html#l00054">GPIO_2</a>, <a class="el" href="gpio__mcu_8h_source.html#l00055">GPIO_3</a>, <a class="el" href="hc__sr04_8c_source.html#l00034">HcSr04Init()</a>, <a class="el" href="lcditse0803_8c_source.html#l00037">LcdItsE0803Init()</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00127">leds_lcd_task_handle</a>, <a class="el" href="led_8c_source.html#l00031">LedsInit()</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00143">periodo_medicion_us</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00125">read_ultra_task_handle</a>, <a class="el" href="switch_8h_source.html#l00032">SWITCH_1</a>, <a class="el" href="switch_8h_source.html#l00033">SWITCH_2</a>, <a class="el" href="switch_8c_source.html#l00047">SwitchActivInt()</a>, <a class="el" href="switch_8c_source.html#l00029">SwitchesInit()</a>, <a class="el" href="timer__mcu_8h_source.html#l00040">timer_config_t::timer</a>, <a class="el" href="timer__mcu_8h_source.html#l00032">TIMER_A</a>, <a class="el" href="timer__mcu_8c_source.html#l00067">TimerInit()</a>, <a class="el" href="timer__mcu_8c_source.html#l00116">TimerStart()</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00107">UartInit()</a>.</p>
+
+</div>
+</div>
+<a id="aab1e10a2cce5bd8cfbfb85777c891dcf" name="aab1e10a2cce5bd8cfbfb85777c891dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab1e10a2cce5bd8cfbfb85777c891dcf">&#9670;&#160;</a></span>FuncTEC1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTEC1 </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback de la interrupción de TEC1: activa/detiene la medición. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00154">154</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00131">medir</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00339">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ade7d63c810b361ae952d436e9315c19d" name="ade7d63c810b361ae952d436e9315c19d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade7d63c810b361ae952d436e9315c19d">&#9670;&#160;</a></span>FuncTEC2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTEC2 </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback de la interrupción de TEC2: activa/desactiva el HOLD. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00161">161</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00133">hold</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00339">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="aab7971084fe6c1a5efd403565e405321" name="aab7971084fe6c1a5efd403565e405321"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab7971084fe6c1a5efd403565e405321">&#9670;&#160;</a></span>FuncTimerMedicion()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncTimerMedicion </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback del TIMER_A, ejecutado en contexto de interrupción. </p>
+<p>Notifica a ReadUltraTask y a LedsAndLcdTask para que realicen un ciclo. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00241">241</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00127">leds_lcd_task_handle</a> y <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00125">read_ultra_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00339">app_main()</a> y <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="a188145c83d9f16e1c8eee4248066a265" name="a188145c83d9f16e1c8eee4248066a265"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a188145c83d9f16e1c8eee4248066a265">&#9670;&#160;</a></span>FuncUART()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void FuncUART </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback de recepción de la UART conectada a la PC. </p>
+<p>Lee un byte y ejecuta el comando correspondiente (no distingue mayúsculas/minúsculas):</p><ul>
+<li>'O': conmuta <a class="el" href="#a750f32ce5c5bf53c0964f126de9d490f" title="medir">medir</a> (equivale a TEC1).</li>
+<li>'H': conmuta <a class="el" href="#af0129e079b57e897edf00f22cc25f3d4" title="hold">hold</a> (equivale a TEC2).</li>
+<li>'I': conmuta <a class="el" href="#a8112dcf7a0d13f2c6ef8571923feb897" title="en_pulgadas">en_pulgadas</a> (cm / pulgadas).</li>
+<li>'M': conmuta <a class="el" href="#ab823edc0d77f7509f223abd5d11c3553" title="mostrar_max">mostrar_max</a>; al activarlo carga <a class="el" href="#aa44c6c89e1f5a5fbb9436d00607f884d" title="distancia_max">distancia_max</a> con <a class="el" href="#aec40b15ff3098bdb2425eb4dc9c11a18" title="distancia">distancia</a>.</li>
+<li>'F': reduce <a class="el" href="#a5d4fea00a200cf7759b0c9e1f01858e1" title="periodo_medicion_us">periodo_medicion_us</a> en 100 ms (mínimo 100 ms) y reinicia el TIMER_A.</li>
+<li>'S': aumenta <a class="el" href="#a5d4fea00a200cf7759b0c9e1f01858e1" title="periodo_medicion_us">periodo_medicion_us</a> en 100 ms y reinicia el TIMER_A. </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">178</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00117">CONFIG_PERIOD_MIN_US</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00119">CONFIG_PERIOD_STEP_US</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00139">distancia</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00141">distancia_max</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00135">en_pulgadas</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00241">FuncTimerMedicion()</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00133">hold</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00131">medir</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00137">mostrar_max</a>, <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00143">periodo_medicion_us</a>, <a class="el" href="timer__mcu_8h_source.html#l00040">timer_config_t::timer</a>, <a class="el" href="timer__mcu_8h_source.html#l00032">TIMER_A</a>, <a class="el" href="timer__mcu_8c_source.html#l00067">TimerInit()</a>, <a class="el" href="timer__mcu_8c_source.html#l00116">TimerStart()</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00142">UartReadByte()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00339">app_main()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="aec40b15ff3098bdb2425eb4dc9c11a18" name="aec40b15ff3098bdb2425eb4dc9c11a18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec40b15ff3098bdb2425eb4dc9c11a18">&#9670;&#160;</a></span>distancia</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t distancia = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Última distancia medida, en centímetros. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00139">139</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="aa44c6c89e1f5a5fbb9436d00607f884d" name="aa44c6c89e1f5a5fbb9436d00607f884d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa44c6c89e1f5a5fbb9436d00607f884d">&#9670;&#160;</a></span>distancia_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t distancia_max = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Máxima distancia medida, en centímetros. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00141">141</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="a8112dcf7a0d13f2c6ef8571923feb897" name="a8112dcf7a0d13f2c6ef8571923feb897"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8112dcf7a0d13f2c6ef8571923feb897">&#9670;&#160;</a></span>en_pulgadas</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool en_pulgadas = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Unidad de visualización: false = cm, true = pulgadas (tecla 'I'). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00135">135</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="af0129e079b57e897edf00f22cc25f3d4" name="af0129e079b57e897edf00f22cc25f3d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0129e079b57e897edf00f22cc25f3d4">&#9670;&#160;</a></span>hold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool hold = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estado de HOLD: true = LCD y UART congelados (TEC2 / tecla 'H'). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00133">133</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00161">FuncTEC2()</a> y <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="a369d96c3d0a72104003fc9c9ca9b0742" name="a369d96c3d0a72104003fc9c9ca9b0742"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a369d96c3d0a72104003fc9c9ca9b0742">&#9670;&#160;</a></span>leds_lcd_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t leds_lcd_task_handle = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle de la tarea que actualiza <a class="el" href="group___l_e_d.html#gab6831a7d06c0a2bc69f9b024f6445a80" title="LED driver for the ESP-EDU Board.">LEDs</a>, LCD y UART. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00127">127</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00339">app_main()</a> y <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00241">FuncTimerMedicion()</a>.</p>
+
+</div>
+</div>
+<a id="a750f32ce5c5bf53c0964f126de9d490f" name="a750f32ce5c5bf53c0964f126de9d490f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a750f32ce5c5bf53c0964f126de9d490f">&#9670;&#160;</a></span>medir</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool medir = true</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estado de la medición: true = midiendo, false = detenida (TEC1 / tecla 'O'). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00131">131</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00154">FuncTEC1()</a> y <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="ab823edc0d77f7509f223abd5d11c3553" name="ab823edc0d77f7509f223abd5d11c3553"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab823edc0d77f7509f223abd5d11c3553">&#9670;&#160;</a></span>mostrar_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool mostrar_max = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valor a mostrar: false = valor actual, true = valor máximo (tecla 'M'). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00137">137</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="a5d4fea00a200cf7759b0c9e1f01858e1" name="a5d4fea00a200cf7759b0c9e1f01858e1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d4fea00a200cf7759b0c9e1f01858e1">&#9670;&#160;</a></span>periodo_medicion_us</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t periodo_medicion_us = <a class="el" href="#a4a1251ed8189be20eb0f4179dbc1839a">CONFIG_PERIOD_MEDICION_US_INIT</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Período actual del timer de medición, en microsegundos (modificable con 'F' y 'S'). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00143">143</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00339">app_main()</a> y <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00178">FuncUART()</a>.</p>
+
+</div>
+</div>
+<a id="a7c284698ae3c18ee6d8d8e6569868791" name="a7c284698ae3c18ee6d8d8e6569868791"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c284698ae3c18ee6d8d8e6569868791">&#9670;&#160;</a></span>read_ultra_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t read_ultra_task_handle = NULL</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle de la tarea de medición con el HC-SR04. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00125">125</a> del archivo <a class="el" href="_medir_distancia_ultra_v3_8c_source.html">MedirDistanciaUltraV3.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00339">app_main()</a> y <a class="el" href="_medir_distancia_ultra_v3_8c_source.html#l00241">FuncTimerMedicion()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_429d80758da54da73083af4edd40d0b3.html">projects</a></li><li class="navelem"><a href="dir_f6ab0c8e81b9d607a002aae7938aa451.html">MedirDistanciaUltraV3</a></li><li class="navelem"><a href="dir_aa25908da23b0e39cb1afc518ce98a34.html">main</a></li><li class="navelem"><a href="_medir_distancia_ultra_v3_8c.html">MedirDistanciaUltraV3.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>

@@ -41,6 +41,9 @@
         },
         {
             "path": "projects/MedirDistanciaUltraV3"
+        },
+        {
+            "path": "projects/Osciloscopio"
         }
     ],
     "settings": {

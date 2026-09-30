@@ -1,0 +1,310 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.17.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Medir Distancia por Ultrasonido V2: Archivo de código fuente C:/Users/faust/Barbagelata_2C_2026/firmware/drivers/devices/inc/adxl345.h</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="codefolding.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', init_search);
+</script>
+<script type="module">
+import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+const theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default';
+mermaid.initialize({ startOnLoad: true, theme: theme });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Medir Distancia por Ultrasonido V2
+   </div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.17.0 -->
+<script type="text/javascript">
+let searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', codefold.init);
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded',() => { initNavTree('adxl345_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">adxl345.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="adxl345_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#ifndef ADXL345_H</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#define ADXL345_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/*==================[inclusions]=============================================*/</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="spi__mcu_8h.html">spi_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/*==================[macros: SPI device / physical mapping]==================*/</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a0928397c9e3e1e84b36a672976252b97">   31</a></span><span class="preprocessor">#define ADXL345_SPI_DEVICE         SPI_1</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="adxl345_8h.html#afc4336b02db4457f97336e2138a08f55">   37</a></span><span class="preprocessor">#define ADXL345_SPI_BITRATE_HZ     2000000UL</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a47117b91427b95ff46c7f44a9d19f156">   40</a></span><span class="preprocessor">#define ADXL345_SPI_CLK_MODE       3</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/*==================[macros: protocolo SPI del ADXL345]======================*/</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="adxl345_8h.html#acbb34eff02fa8cc0497ce39c7d050cdd">   44</a></span><span class="preprocessor">#define ADXL345_READ_BIT            0x80U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a7fce1e2c32d636b947e8381f4eba0b6f">   45</a></span><span class="preprocessor">#define ADXL345_WRITE_BIT           0x00U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a55527994b33b9b0ef20148052eb07cca">   46</a></span><span class="preprocessor">#define ADXL345_MULTIBYTE_BIT       0x40U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/*==================[macros: mapa de registros]==============================*/</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a29b5a30a1bc0cbaaf3f052eaab713ecb">   50</a></span><span class="preprocessor">#define ADXL345_REG_DEVID           0x00U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a4606ede066d6a452645f00652f6f3adc">   51</a></span><span class="preprocessor">#define ADXL345_REG_THRESH_TAP      0x1DU   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a47ada0987f13abc327791f3b721fc2fa">   52</a></span><span class="preprocessor">#define ADXL345_REG_OFSX            0x1EU   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a9f528be643cec2847192f1866705b570">   53</a></span><span class="preprocessor">#define ADXL345_REG_OFSY            0x1FU   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="adxl345_8h.html#ae81729318b7fa11a631c4e1031fe7c97">   54</a></span><span class="preprocessor">#define ADXL345_REG_OFSZ            0x20U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a027ffe4ead3047b75f1c15f8ee27acef">   55</a></span><span class="preprocessor">#define ADXL345_REG_DUR             0x21U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a7378c1d55a972c54ce6608c1e32336ef">   56</a></span><span class="preprocessor">#define ADXL345_REG_LATENT          0x22U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="adxl345_8h.html#ab8b04304c7de9e6f1b530418b0b9dddd">   57</a></span><span class="preprocessor">#define ADXL345_REG_WINDOW          0x23U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="adxl345_8h.html#aed83f0847d342ebbbe0c3eafeb12dda8">   58</a></span><span class="preprocessor">#define ADXL345_REG_THRESH_ACT      0x24U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a6bd7ad5b22116ad715dd655755d8c129">   59</a></span><span class="preprocessor">#define ADXL345_REG_THRESH_INACT    0x25U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="adxl345_8h.html#ace645cf273f2c8332d24bb37fea7f725">   60</a></span><span class="preprocessor">#define ADXL345_REG_TIME_INACT      0x26U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="adxl345_8h.html#aeade3a2907935b106ffce9c81aedee76">   61</a></span><span class="preprocessor">#define ADXL345_REG_ACT_INACT_CTL   0x27U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a0522945d2a7b9a37f7d76e2620234576">   62</a></span><span class="preprocessor">#define ADXL345_REG_THRESH_FF       0x28U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a5abb839b3f7233cb3882e15899399d4c">   63</a></span><span class="preprocessor">#define ADXL345_REG_TIME_FF         0x29U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a07887f474abd214ba8528cd136bc2b60">   64</a></span><span class="preprocessor">#define ADXL345_REG_TAP_AXES        0x2AU   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a10336666b8b1228d08d4e634817832cc">   65</a></span><span class="preprocessor">#define ADXL345_REG_ACT_TAP_STATUS  0x2BU   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a51ce19e9e208c52fb41348c472b428ab">   66</a></span><span class="preprocessor">#define ADXL345_REG_BW_RATE         0x2CU   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="adxl345_8h.html#aa8b343258a85689467d33fb6e7a92d18">   67</a></span><span class="preprocessor">#define ADXL345_REG_POWER_CTL       0x2DU   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="adxl345_8h.html#ae54dd63a35ee5baec0ba7bfa8892d005">   68</a></span><span class="preprocessor">#define ADXL345_REG_INT_ENABLE      0x2EU   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a725afaaa7d76f0a2b503a32ab8b4a689">   69</a></span><span class="preprocessor">#define ADXL345_REG_INT_MAP         0x2FU   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="adxl345_8h.html#aa1a2a197465ce44bf8a2c06acc22c561">   70</a></span><span class="preprocessor">#define ADXL345_REG_INT_SOURCE      0x30U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a599ba3e5ed5a1ff931b9b268590a54a3">   71</a></span><span class="preprocessor">#define ADXL345_REG_DATA_FORMAT     0x31U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="adxl345_8h.html#ad357e2d6384df108aab1cffc6dc32782">   72</a></span><span class="preprocessor">#define ADXL345_REG_DATAX0          0x32U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a104644acecc00a82948a4f1f275f18ee">   73</a></span><span class="preprocessor">#define ADXL345_REG_DATAX1          0x33U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a5a6c961c3b5573ff25525b47941fd8b9">   74</a></span><span class="preprocessor">#define ADXL345_REG_DATAY0          0x34U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="adxl345_8h.html#afc55ed6bd0c938a106b5d08dfec77223">   75</a></span><span class="preprocessor">#define ADXL345_REG_DATAY1          0x35U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a7e8957c91c0f9992a389968510eb0a75">   76</a></span><span class="preprocessor">#define ADXL345_REG_DATAZ0          0x36U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="adxl345_8h.html#aac6575491824aee967461dee85eda6cd">   77</a></span><span class="preprocessor">#define ADXL345_REG_DATAZ1          0x37U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a69102d04a2a2c3f5de46b503ea22646e">   78</a></span><span class="preprocessor">#define ADXL345_REG_FIFO_CTL        0x38U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a9ba8252efafd2b9e9a7257a15062c027">   79</a></span><span class="preprocessor">#define ADXL345_REG_FIFO_STATUS     0x39U   </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span></div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a13153989e5793072f63242dee37a7bf0">   82</a></span><span class="preprocessor">#define ADXL345_DEVID_VALUE         0xE5U</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="comment">/*==================[macros: bits de POWER_CTL (0x2D)]========================*/</span></div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a4ccc4953925003f7a0f845489937e991">   85</a></span><span class="preprocessor">#define ADXL345_POWER_CTL_LINK       (1U &lt;&lt; 5)</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a7d55201eb0dd3ea839968ada94bba487">   86</a></span><span class="preprocessor">#define ADXL345_POWER_CTL_AUTO_SLEEP (1U &lt;&lt; 4)</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a6897be8c059c143e60d8678d1f893fcf">   87</a></span><span class="preprocessor">#define ADXL345_POWER_CTL_MEASURE    (1U &lt;&lt; 3)</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a0fa739b0e0c20273947124b2c562f6f3">   88</a></span><span class="preprocessor">#define ADXL345_POWER_CTL_SLEEP      (1U &lt;&lt; 2)</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="adxl345_8h.html#aad54a9cb73c3efdeddcad2fd39b86916">   89</a></span><span class="preprocessor">#define ADXL345_POWER_CTL_WAKEUP_MASK 0x03U </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">/*==================[macros: bits de BW_RATE (0x2C)]===========================*/</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a0dbd1f11a4f61a98f04c2c3f37749a2e">   92</a></span><span class="preprocessor">#define ADXL345_BW_RATE_LOW_POWER    (1U &lt;&lt; 4)</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a92dbc39d130913d032571ebf13a5ef14">   93</a></span><span class="preprocessor">#define ADXL345_BW_RATE_MASK         0x0FU</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="adxl345_8h.html#acecacf6f2e4f19f1d5fe155c2e5bba03">   96</a></span><span class="preprocessor">#define ADXL345_RATE_800HZ           0x0DU</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="adxl345_8h.html#abf804774858aa46b6d9ad7114a879b8c">   97</a></span><span class="preprocessor">#define ADXL345_RATE_400HZ           0x0CU</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a442d29fae69da691268c3fcb883d5ec5">   98</a></span><span class="preprocessor">#define ADXL345_RATE_200HZ           0x0BU</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a94b290274d7dc9b983c40f7eb8c00b96">   99</a></span><span class="preprocessor">#define ADXL345_RATE_100HZ           0x0AU </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno"><a class="line" href="adxl345_8h.html#afad1f9a2716b7f2f1225e86569da64c7">  100</a></span><span class="preprocessor">#define ADXL345_RATE_50HZ            0x09U</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a478fcf3bd3f85630728027378bfe8f69">  101</a></span><span class="preprocessor">#define ADXL345_RATE_25HZ            0x08U</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a7d2e47fa28a3aef30df1188ef3044644">  102</a></span><span class="preprocessor">#define ADXL345_RATE_12_5HZ          0x07U</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a1e90e1be9a97effdbf0a1dc0f1d720a2">  103</a></span><span class="preprocessor">#define ADXL345_RATE_6_25HZ          0x06U</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="adxl345_8h.html#aa9660f6fe6bf26e1c626ba5bf75a82b2">  104</a></span><span class="preprocessor">#define ADXL345_RATE_3_13HZ          0x05U</span></div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno"><a class="line" href="adxl345_8h.html#aab1e5d2024949c5243c1d8979e3d641f">  105</a></span><span class="preprocessor">#define ADXL345_RATE_1_56HZ          0x04U</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">/*==================[macros: bits de DATA_FORMAT (0x31)]======================*/</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a9ca83f6f44ee63fdec3f479ff315c6aa">  108</a></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_SELF_TEST  (1U &lt;&lt; 7)</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a4750b1cbb98293a78cf156c4bc2a90e9">  109</a></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_SPI_3WIRE  (1U &lt;&lt; 6) </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a88f6d44cf8d56e251c09931c87a71188">  110</a></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_INT_INVERT (1U &lt;&lt; 5)</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a9fa3e80839409829b8aa5054114fe1a3">  111</a></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_FULL_RES   (1U &lt;&lt; 3)</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="adxl345_8h.html#acf4dd5dcb9959963758a32c006f58b3d">  112</a></span><span class="preprocessor">#define ADXL345_DATA_FORMAT_JUSTIFY    (1U &lt;&lt; 2) </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="adxl345_8h.html#afa89d0888b9e734ad7f992dec25c1fa7">  114</a></span><span class="preprocessor">#define ADXL345_RANGE_2G             0x00U</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a5e66e140e085d6e8fdc98ce7f8b87290">  115</a></span><span class="preprocessor">#define ADXL345_RANGE_4G             0x01U</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a1b3f9e470894f3452c818c3167076be6">  116</a></span><span class="preprocessor">#define ADXL345_RANGE_8G             0x02U</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a8cb06ef9eec9ffa9a68ea76ac50bda7c">  117</a></span><span class="preprocessor">#define ADXL345_RANGE_16G            0x03U</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a0ac5187c40bdd0cdc3f96ea43836fac0">  118</a></span><span class="preprocessor">#define ADXL345_RANGE_MASK           0x03U</span></div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">/*==================[macros: bits de FIFO_CTL (0x38)]=========================*/</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a70a71dca8246caa3f2fe6cfe07b0a8d9">  121</a></span><span class="preprocessor">#define ADXL345_FIFO_MODE_BYPASS     0x00U</span></div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="adxl345_8h.html#ac2768550e81873510d0ea45e8dcf490e">  122</a></span><span class="preprocessor">#define ADXL345_FIFO_MODE_FIFO       0x40U</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno"><a class="line" href="adxl345_8h.html#ac047d58ac4a12bba64e6ca0339146ea4">  123</a></span><span class="preprocessor">#define ADXL345_FIFO_MODE_STREAM     0x80U</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a466a17ae8884375c5d1d5f16c2032431">  124</a></span><span class="preprocessor">#define ADXL345_FIFO_MODE_TRIGGER    0xC0U</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a0628a9ef8cb6ed4c13dfb40283370267">  125</a></span><span class="preprocessor">#define ADXL345_FIFO_MODE_MASK       0xC0U</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a00732f9652947cfa09a5c1953d9a2908">  126</a></span><span class="preprocessor">#define ADXL345_FIFO_TRIGGER_BIT     (1U &lt;&lt; 5)</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="adxl345_8h.html#af3279475284b1691a3fdffc39abee0be">  127</a></span><span class="preprocessor">#define ADXL345_FIFO_SAMPLES_MASK    0x1FU  </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">/*==================[macros: bits de INT_ENABLE / INT_MAP / INT_SOURCE]=======*/</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a9b09a9941cc150476e04b89544c0d747">  130</a></span><span class="preprocessor">#define ADXL345_INT_DATA_READY       (1U &lt;&lt; 7)</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="adxl345_8h.html#af177e7ff17c7e262c54cc8f4c0341bfa">  131</a></span><span class="preprocessor">#define ADXL345_INT_SINGLE_TAP       (1U &lt;&lt; 6)</span></div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a67199fa9360afc8247a8a4da3951f122">  132</a></span><span class="preprocessor">#define ADXL345_INT_DOUBLE_TAP       (1U &lt;&lt; 5)</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno"><a class="line" href="adxl345_8h.html#aadc9bf111599cf9e4279e054d0cdb0a9">  133</a></span><span class="preprocessor">#define ADXL345_INT_ACTIVITY         (1U &lt;&lt; 4)</span></div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a24383976d6f1d338f006bca00f7f0d12">  134</a></span><span class="preprocessor">#define ADXL345_INT_INACTIVITY       (1U &lt;&lt; 3)</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a48fc5eaa2ce6354ec8fe3a6a07b408d9">  135</a></span><span class="preprocessor">#define ADXL345_INT_FREE_FALL        (1U &lt;&lt; 2)</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a7274b59cca3faaa1cb498bda49b781c8">  136</a></span><span class="preprocessor">#define ADXL345_INT_WATERMARK        (1U &lt;&lt; 1)</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a664e61abd428aed5bc694a3b7158d0f7">  137</a></span><span class="preprocessor">#define ADXL345_INT_OVERRUN          (1U &lt;&lt; 0)</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span><span class="comment">/*==================[typedef]==================================================*/</span></div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span></div>
+<div class="foldopen" id="foldopen00142" data-start="{" data-end="};">
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">  142</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0a5bc4a5e95d97714f8bd6d49148043731">  143</a></span>    <a class="code hl_enumvalue" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0a5bc4a5e95d97714f8bd6d49148043731">ADXL345_OK</a> = 0,</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0a1181e5c4ad7e9b218a24186db5ef4240">  144</a></span>    <a class="code hl_enumvalue" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0a1181e5c4ad7e9b218a24186db5ef4240">ADXL345_ERROR_SPI</a>,          </div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0afa2b3adf4a5aa5674eaac4801982e887">  145</a></span>    <a class="code hl_enumvalue" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0afa2b3adf4a5aa5674eaac4801982e887">ADXL345_ERROR_DEVID</a>,        </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>} <a class="code hl_enumeration" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a>;</div>
+</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span></div>
+<div class="foldopen" id="foldopen00149" data-start="{" data-end="};">
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno"><a class="line" href="structadxl345__accel__raw__t.html">  149</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno"><a class="line" href="structadxl345__accel__raw__t.html#ae1c2d516777e6b42af0d281c9ecc7375">  150</a></span>    int16_t <a class="code hl_variable" href="structadxl345__accel__raw__t.html#ae1c2d516777e6b42af0d281c9ecc7375">x</a>;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno"><a class="line" href="structadxl345__accel__raw__t.html#af77b1a54442f2443cf64a4766f916bcd">  151</a></span>    int16_t <a class="code hl_variable" href="structadxl345__accel__raw__t.html#af77b1a54442f2443cf64a4766f916bcd">y</a>;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno"><a class="line" href="structadxl345__accel__raw__t.html#abd938edbea27ed4f351dc19d69039222">  152</a></span>    int16_t <a class="code hl_variable" href="structadxl345__accel__raw__t.html#abd938edbea27ed4f351dc19d69039222">z</a>;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>} <a class="code hl_struct" href="structadxl345__accel__raw__t.html">adxl345_accel_raw_t</a>;</div>
+</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span></div>
+<div class="foldopen" id="foldopen00156" data-start="{" data-end="};">
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno"><a class="line" href="structadxl345__config__t.html">  156</a></span><span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno"><a class="line" href="structadxl345__config__t.html#a9edcde0584b2ab6c4a7b49eaec49d237">  157</a></span>    uint8_t <a class="code hl_variable" href="structadxl345__config__t.html#a9edcde0584b2ab6c4a7b49eaec49d237">range</a>;          </div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="structadxl345__config__t.html#ac54da82b632811eef34ff36fa02fc7bb">  158</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structadxl345__config__t.html#ac54da82b632811eef34ff36fa02fc7bb">full_resolution</a>; </div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="structadxl345__config__t.html#aa4505eca93ee2c33e99c1abc48d3264c">  159</a></span>    uint8_t <a class="code hl_variable" href="structadxl345__config__t.html#aa4505eca93ee2c33e99c1abc48d3264c">rate_code</a>;      </div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno"><a class="line" href="structadxl345__config__t.html#a860ddc4ae92159dbd4413328220ea650">  160</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structadxl345__config__t.html#a860ddc4ae92159dbd4413328220ea650">low_power_mode</a>; </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno"><a class="line" href="structadxl345__config__t.html#a843c0649f0ad45132d68b0c84f06c000">  161</a></span>    <span class="keywordtype">bool</span>    <a class="code hl_variable" href="structadxl345__config__t.html#a843c0649f0ad45132d68b0c84f06c000">use_fifo_stream</a>; </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="structadxl345__config__t.html#add3a338a43a9eaee8bc81d26128cde3d">  162</a></span>    uint8_t <a class="code hl_variable" href="structadxl345__config__t.html#add3a338a43a9eaee8bc81d26128cde3d">fifo_watermark_samples</a>; </div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>} <a class="code hl_struct" href="structadxl345__config__t.html">adxl345_config_t</a>;</div>
+</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="comment">/*==================[external functions declaration]==========================*/</span></div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><a class="code hl_enumeration" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> <a class="code hl_function" href="adxl345_8h.html#ae76cfb6449ee4c25dc202d523aff29c0">adxl345_init</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structadxl345__config__t.html">adxl345_config_t</a> *config);</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span></div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span><a class="code hl_enumeration" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> <a class="code hl_function" href="adxl345_8h.html#ac64d93d2b3fa7055a0ef79096aa872a0">adxl345_write_register</a>(uint8_t reg, uint8_t value);</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span><a class="code hl_enumeration" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> <a class="code hl_function" href="adxl345_8h.html#a57b5c1606c416938562ca52858260e7f">adxl345_read_registers</a>(uint8_t reg, uint8_t *rx_buf, uint8_t length);</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><a class="code hl_enumeration" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> <a class="code hl_function" href="adxl345_8h.html#a2213013aec58834c71da8dfb609c6231">adxl345_read_accel</a>(<a class="code hl_struct" href="structadxl345__accel__raw__t.html">adxl345_accel_raw_t</a> *out);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span></div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>int32_t <a class="code hl_function" href="adxl345_8h.html#acaa7c94bbe85c988f061abb4654e7ab0">adxl345_raw_to_mg</a>(int16_t raw, <span class="keywordtype">bool</span> full_resolution, uint8_t range);</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span></div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><a class="code hl_enumeration" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> <a class="code hl_function" href="adxl345_8h.html#ace658ce86e9a3f55de4a51a3c45c07a3">adxl345_get_fifo_entries</a>(uint8_t *entries);</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><a class="code hl_enumeration" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> <a class="code hl_function" href="adxl345_8h.html#a059ed7986b5a373642ccf1f0d1ea13ef">adxl345_standby</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><a class="code hl_enumeration" href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a> <a class="code hl_function" href="adxl345_8h.html#ac4e75eeee2c00216f4deaf8701d5c91c">adxl345_wakeup</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>}</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span><span class="preprocessor">#endif </span><span class="comment">/* ADXL345_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aadxl345_8h_html_a059ed7986b5a373642ccf1f0d1ea13ef"><div class="ttname"><a href="adxl345_8h.html#a059ed7986b5a373642ccf1f0d1ea13ef">adxl345_standby</a></div><div class="ttdeci">adxl345_status_t adxl345_standby(void)</div><div class="ttdoc">Pone al sensor en modo standby (bajo consumo, 0.1 uA tipico), conservando el contenido del FIFO....</div><div class="ttdef"><b>Definition</b> <a href="adxl345_8c_source.html#l00246">adxl345.c:246</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_a2213013aec58834c71da8dfb609c6231"><div class="ttname"><a href="adxl345_8h.html#a2213013aec58834c71da8dfb609c6231">adxl345_read_accel</a></div><div class="ttdeci">adxl345_status_t adxl345_read_accel(adxl345_accel_raw_t *out)</div><div class="ttdoc">Lee una muestra de aceleracion (X, Y, Z) mediante burst read de 6 bytes desde DATAX0....</div><div class="ttdef"><b>Definition</b> <a href="adxl345_8c_source.html#l00188">adxl345.c:188</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_a57b5c1606c416938562ca52858260e7f"><div class="ttname"><a href="adxl345_8h.html#a57b5c1606c416938562ca52858260e7f">adxl345_read_registers</a></div><div class="ttdeci">adxl345_status_t adxl345_read_registers(uint8_t reg, uint8_t *rx_buf, uint8_t length)</div><div class="ttdoc">Lee uno o mas registros consecutivos del ADXL345 (lectura en rafaga).</div><div class="ttdef"><b>Definition</b> <a href="adxl345_8c_source.html#l00081">adxl345.c:81</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_a6dab48b5ab19b85f0b50ffd457b5b1b0"><div class="ttname"><a href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0">adxl345_status_t</a></div><div class="ttdeci">adxl345_status_t</div><div class="ttdoc">Codigos de retorno del driver.</div><div class="ttdef"><b>Definition</b> <a href="#l00142">adxl345.h:142</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_a6dab48b5ab19b85f0b50ffd457b5b1b0a1181e5c4ad7e9b218a24186db5ef4240"><div class="ttname"><a href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0a1181e5c4ad7e9b218a24186db5ef4240">ADXL345_ERROR_SPI</a></div><div class="ttdeci">@ ADXL345_ERROR_SPI</div><div class="ttdef"><b>Definition</b> <a href="#l00144">adxl345.h:144</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_a6dab48b5ab19b85f0b50ffd457b5b1b0a5bc4a5e95d97714f8bd6d49148043731"><div class="ttname"><a href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0a5bc4a5e95d97714f8bd6d49148043731">ADXL345_OK</a></div><div class="ttdeci">@ ADXL345_OK</div><div class="ttdef"><b>Definition</b> <a href="#l00143">adxl345.h:143</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_a6dab48b5ab19b85f0b50ffd457b5b1b0afa2b3adf4a5aa5674eaac4801982e887"><div class="ttname"><a href="adxl345_8h.html#a6dab48b5ab19b85f0b50ffd457b5b1b0afa2b3adf4a5aa5674eaac4801982e887">ADXL345_ERROR_DEVID</a></div><div class="ttdeci">@ ADXL345_ERROR_DEVID</div><div class="ttdef"><b>Definition</b> <a href="#l00145">adxl345.h:145</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_ac4e75eeee2c00216f4deaf8701d5c91c"><div class="ttname"><a href="adxl345_8h.html#ac4e75eeee2c00216f4deaf8701d5c91c">adxl345_wakeup</a></div><div class="ttdeci">adxl345_status_t adxl345_wakeup(void)</div><div class="ttdoc">Vuelve a modo medicion luego de un adxl345_standby().</div><div class="ttdef"><b>Definition</b> <a href="adxl345_8c_source.html#l00254">adxl345.c:254</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_ac64d93d2b3fa7055a0ef79096aa872a0"><div class="ttname"><a href="adxl345_8h.html#ac64d93d2b3fa7055a0ef79096aa872a0">adxl345_write_register</a></div><div class="ttdeci">adxl345_status_t adxl345_write_register(uint8_t reg, uint8_t value)</div><div class="ttdoc">Escribe un unico registro del ADXL345.</div><div class="ttdef"><b>Definition</b> <a href="adxl345_8c_source.html#l00067">adxl345.c:67</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_acaa7c94bbe85c988f061abb4654e7ab0"><div class="ttname"><a href="adxl345_8h.html#acaa7c94bbe85c988f061abb4654e7ab0">adxl345_raw_to_mg</a></div><div class="ttdeci">int32_t adxl345_raw_to_mg(int16_t raw, bool full_resolution, uint8_t range)</div><div class="ttdoc">Convierte una lectura cruda a mili-g, segun el rango y modo de resolucion configurados.</div><div class="ttdef"><b>Definition</b> <a href="adxl345_8c_source.html#l00212">adxl345.c:212</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_ace658ce86e9a3f55de4a51a3c45c07a3"><div class="ttname"><a href="adxl345_8h.html#ace658ce86e9a3f55de4a51a3c45c07a3">adxl345_get_fifo_entries</a></div><div class="ttdeci">adxl345_status_t adxl345_get_fifo_entries(uint8_t *entries)</div><div class="ttdoc">Devuelve la cantidad de muestras actualmente almacenadas en el FIFO.</div><div class="ttdef"><b>Definition</b> <a href="adxl345_8c_source.html#l00230">adxl345.c:230</a></div></div>
+<div class="ttc" id="aadxl345_8h_html_ae76cfb6449ee4c25dc202d523aff29c0"><div class="ttname"><a href="adxl345_8h.html#ae76cfb6449ee4c25dc202d523aff29c0">adxl345_init</a></div><div class="ttdeci">adxl345_status_t adxl345_init(const adxl345_config_t *config)</div><div class="ttdoc">Inicializa el bus SPI (via spi_mcu) y el ADXL345: verifica DEVID, configura DATA_FORMAT,...</div><div class="ttdef"><b>Definition</b> <a href="adxl345_8c_source.html#l00114">adxl345.c:114</a></div></div>
+<div class="ttc" id="aspi__mcu_8h_html"><div class="ttname"><a href="spi__mcu_8h.html">spi_mcu.h</a></div></div>
+<div class="ttc" id="astructadxl345__accel__raw__t_html"><div class="ttname"><a href="structadxl345__accel__raw__t.html">adxl345_accel_raw_t</a></div><div class="ttdoc">Muestra de aceleracion cruda (cuentas, twos complement de 16 bits).</div><div class="ttdef"><b>Definition</b> <a href="#l00149">adxl345.h:149</a></div></div>
+<div class="ttc" id="astructadxl345__accel__raw__t_html_abd938edbea27ed4f351dc19d69039222"><div class="ttname"><a href="structadxl345__accel__raw__t.html#abd938edbea27ed4f351dc19d69039222">adxl345_accel_raw_t::z</a></div><div class="ttdeci">int16_t z</div><div class="ttdef"><b>Definition</b> <a href="#l00152">adxl345.h:152</a></div></div>
+<div class="ttc" id="astructadxl345__accel__raw__t_html_ae1c2d516777e6b42af0d281c9ecc7375"><div class="ttname"><a href="structadxl345__accel__raw__t.html#ae1c2d516777e6b42af0d281c9ecc7375">adxl345_accel_raw_t::x</a></div><div class="ttdeci">int16_t x</div><div class="ttdef"><b>Definition</b> <a href="#l00150">adxl345.h:150</a></div></div>
+<div class="ttc" id="astructadxl345__accel__raw__t_html_af77b1a54442f2443cf64a4766f916bcd"><div class="ttname"><a href="structadxl345__accel__raw__t.html#af77b1a54442f2443cf64a4766f916bcd">adxl345_accel_raw_t::y</a></div><div class="ttdeci">int16_t y</div><div class="ttdef"><b>Definition</b> <a href="#l00151">adxl345.h:151</a></div></div>
+<div class="ttc" id="astructadxl345__config__t_html"><div class="ttname"><a href="structadxl345__config__t.html">adxl345_config_t</a></div><div class="ttdoc">Configuracion de alto nivel para adxl345_init().</div><div class="ttdef"><b>Definition</b> <a href="#l00156">adxl345.h:156</a></div></div>
+<div class="ttc" id="astructadxl345__config__t_html_a843c0649f0ad45132d68b0c84f06c000"><div class="ttname"><a href="structadxl345__config__t.html#a843c0649f0ad45132d68b0c84f06c000">adxl345_config_t::use_fifo_stream</a></div><div class="ttdeci">bool use_fifo_stream</div><div class="ttdef"><b>Definition</b> <a href="#l00161">adxl345.h:161</a></div></div>
+<div class="ttc" id="astructadxl345__config__t_html_a860ddc4ae92159dbd4413328220ea650"><div class="ttname"><a href="structadxl345__config__t.html#a860ddc4ae92159dbd4413328220ea650">adxl345_config_t::low_power_mode</a></div><div class="ttdeci">bool low_power_mode</div><div class="ttdef"><b>Definition</b> <a href="#l00160">adxl345.h:160</a></div></div>
+<div class="ttc" id="astructadxl345__config__t_html_a9edcde0584b2ab6c4a7b49eaec49d237"><div class="ttname"><a href="structadxl345__config__t.html#a9edcde0584b2ab6c4a7b49eaec49d237">adxl345_config_t::range</a></div><div class="ttdeci">uint8_t range</div><div class="ttdef"><b>Definition</b> <a href="#l00157">adxl345.h:157</a></div></div>
+<div class="ttc" id="astructadxl345__config__t_html_aa4505eca93ee2c33e99c1abc48d3264c"><div class="ttname"><a href="structadxl345__config__t.html#aa4505eca93ee2c33e99c1abc48d3264c">adxl345_config_t::rate_code</a></div><div class="ttdeci">uint8_t rate_code</div><div class="ttdef"><b>Definition</b> <a href="#l00159">adxl345.h:159</a></div></div>
+<div class="ttc" id="astructadxl345__config__t_html_ac54da82b632811eef34ff36fa02fc7bb"><div class="ttname"><a href="structadxl345__config__t.html#ac54da82b632811eef34ff36fa02fc7bb">adxl345_config_t::full_resolution</a></div><div class="ttdeci">bool full_resolution</div><div class="ttdef"><b>Definition</b> <a href="#l00158">adxl345.h:158</a></div></div>
+<div class="ttc" id="astructadxl345__config__t_html_add3a338a43a9eaee8bc81d26128cde3d"><div class="ttname"><a href="structadxl345__config__t.html#add3a338a43a9eaee8bc81d26128cde3d">adxl345_config_t::fifo_watermark_samples</a></div><div class="ttdeci">uint8_t fifo_watermark_samples</div><div class="ttdef"><b>Definition</b> <a href="#l00162">adxl345.h:162</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_ec09302fb0adc1632f5eb1743ad0d2a7.html">inc</a></li><li class="navelem"><a href="adxl345_8h.html">adxl345.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.17.0 </li>
+  </ul>
+</div>
+</body>
+</html>
