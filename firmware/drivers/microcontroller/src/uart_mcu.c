@@ -16,6 +16,7 @@
 #include "freertos/FreeRTOS.h"
 #include "freertos/queue.h"
 #include "esp_log.h"
+#include <string.h>
 /*==================[macros and definitions]=================================*/
 #define UART_CONN_TX        GPIO_18         /*!<  */
 #define UART_CONN_RX        GPIO_19         /*!<  */
@@ -187,7 +188,14 @@ void UartSendByte(uart_mcu_port_t port, const char *data){
                 uart_num = UART_NUM_1;
             break;
     }
-    uart_tx_chars(uart_num, data, 1);
+    /* uart_write_bytes() en vez de uart_tx_chars(): escribe al buffer de
+     * anillo de TX (instalado en UartInit con TX_BUFFER_SIZE), no directo
+     * al FIFO de hardware. Eso le da backpressure real: si no hay lugar
+     * porque la UART fisica todavia no termino de transmitir lo anterior,
+     * esta llamada bloquea la tarea en vez de descartar el byte en
+     * silencio (que es lo que hacia uart_tx_chars y causaba lineas
+     * cortadas/mezcladas a alta frecuencia de muestreo). */
+    uart_write_bytes(uart_num, data, 1);
 }
 
 void UartSendString(uart_mcu_port_t port, const char *msg){
@@ -200,10 +208,11 @@ void UartSendString(uart_mcu_port_t port, const char *msg){
                 uart_num = UART_NUM_1;
             break;
     }
-	while(*msg != 0){
-        uart_tx_chars(uart_num, msg, 1);
-		msg++;
-	}
+    /* Un solo uart_write_bytes() para todo el string, en vez de un
+     * uart_tx_chars() por caracter. Mismo motivo que en UartSendByte:
+     * esta version respeta el buffer de anillo y bloquea si hace falta,
+     * en lugar de perder bytes cuando el FIFO de hardware esta lleno. */
+    uart_write_bytes(uart_num, msg, strlen(msg));
 }
 
 void UartSendBuffer(uart_mcu_port_t port, const char *data, uint8_t nbytes){
@@ -216,7 +225,10 @@ void UartSendBuffer(uart_mcu_port_t port, const char *data, uint8_t nbytes){
                 uart_num = UART_NUM_1;
             break;
     }
-    uart_tx_chars(uart_num, data, nbytes);
+    /* Idem UartSendByte/UartSendString: uart_write_bytes() en vez de
+     * uart_tx_chars() para respetar el buffer de anillo y bloquear en
+     * vez de perder datos bajo carga. */
+    uart_write_bytes(uart_num, data, nbytes);
 }
 
 uint8_t* UartItoa(uint32_t val, uint8_t base){

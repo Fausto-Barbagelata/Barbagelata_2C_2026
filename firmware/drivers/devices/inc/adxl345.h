@@ -34,7 +34,7 @@ extern "C" {
  *  Se usa un valor conservador para mejorar la integridad de senal en cables
  *  largos hacia el sensor pegado al cuello del paciente.
  */
-#define ADXL345_SPI_BITRATE_HZ     2000000UL
+#define ADXL345_SPI_BITRATE_HZ     10000000UL
 
 /** @brief Modo de reloj SPI requerido por el ADXL345: CPOL = 1, CPHA = 1 (modo 3). */
 #define ADXL345_SPI_CLK_MODE       3
@@ -93,6 +93,8 @@ extern "C" {
 #define ADXL345_BW_RATE_MASK         0x0FU
 
 /** @brief Codigos de ODR (Output Data Rate) mas utiles para monitoreo ambulatorio. */
+#define ADXL345_RATE_3200HZ          0x0FU
+#define ADXL345_RATE_1600HZ          0x0EU
 #define ADXL345_RATE_800HZ           0x0DU
 #define ADXL345_RATE_400HZ           0x0CU
 #define ADXL345_RATE_200HZ           0x0BU
