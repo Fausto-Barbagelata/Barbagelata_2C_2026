@@ -13,12 +13,13 @@
 #include "led.h"
 #include "switch.h"
 #include "ble_mcu.h"
+#include "buzzer.h"
 
 /*==================[macros and definitions]=================================*/
 #define UART_BAUD_RATE          921600
 #define SAMPLE_FREQ_HZ          1600
 #define SAMPLE_PERIOD_US        (1000000 / SAMPLE_FREQ_HZ)
-
+#define BUZZER_PIN GPIO_3
 /** @brief Factor de submuestreo para transmisión BLE
  *  1600 Hz / 16 = 100 Hz enviados por Bluetooth (ideal para la app) */
 #define BLE_DOWNSAMPLE_FACTOR   16
@@ -377,11 +378,16 @@ static void VoiceTestCheckSwitchEvent(void){
 }
 
 static void VoiceTestProcessSample(float filtered_value){
+    /* Si se está esperando que el usuario presione SWITCH_1 o SWITCH_2, no procesamos más muestras */
+    if(voice_test_awaiting_confirmation){
+        return;
+    }
+
     switch(voice_test_phase){
         case VOICE_TEST_PHASE_SILENCE:
             RmsBlockAddSample(&voice_test_rms_accum, filtered_value);
             voice_test_sample_count++;
-            if(voice_test_sample_count >= VOICE_TEST_SILENCE_SAMPLES){
+            if(voice_test_sample_count == VOICE_TEST_SILENCE_SAMPLES){ // Usar == en lugar de >=
                 VoiceTestFinishPhase();
             }
             break;
@@ -392,7 +398,7 @@ static void VoiceTestProcessSample(float filtered_value){
                 f0_buffer[voice_test_sample_count] = filtered_value;
             }
             voice_test_sample_count++;
-            if(voice_test_sample_count >= VOICE_TEST_COMFORTABLE_SAMPLES){
+            if(voice_test_sample_count == VOICE_TEST_COMFORTABLE_SAMPLES){ // Usar == en lugar de >=
                 VoiceTestFinishPhase();
             }
             break;
@@ -400,7 +406,7 @@ static void VoiceTestProcessSample(float filtered_value){
         case VOICE_TEST_PHASE_SHOUT:
             RmsBlockAddSample(&voice_test_rms_accum, filtered_value);
             voice_test_sample_count++;
-            if(voice_test_sample_count >= VOICE_TEST_SHOUT_SAMPLES){
+            if(voice_test_sample_count == VOICE_TEST_SHOUT_SAMPLES){ // Usar == en lugar de >=
                 VoiceTestFinishPhase();
             }
             break;
@@ -564,9 +570,10 @@ static void ProcessingTask(void *param){
             continue;
         }
 
+        /* Si estamos esperando confirmación del usuario por teclado */
         if(voice_test_awaiting_confirmation){
             VoiceTestCheckSwitchEvent();
-            continue;
+            continue; /* Ignora el resto del procesamiento de la muestra hasta presionar SWITCH_1 */
         }
 
         float scalar_value = ComputeFilteredAxisValue(&sample, &filtered);
@@ -577,6 +584,7 @@ static void ProcessingTask(void *param){
 
 static void LedTask(void *param){
     voice_level_t last_shown = VOICE_LEVEL_SILENCE;
+    uint16_t buzzer_ticks = 0; /* Contador para controlar los 1000 ms (20 * 50ms) */
     LedsOffAll();
 
     while(true){
@@ -585,14 +593,33 @@ static void LedTask(void *param){
         if(current != last_shown){
             uint8_t mask;
             switch(current){
-                case VOICE_LEVEL_SOFT:   mask = LED_1; break;
-                case VOICE_LEVEL_NORMAL: mask = LED_2; break;
-                case VOICE_LEVEL_LOUD:   mask = LED_3; break;
+                case VOICE_LEVEL_SOFT:   
+                    mask = LED_1; 
+                    break;
+                case VOICE_LEVEL_NORMAL: 
+                    mask = LED_2; 
+                    break;
+                case VOICE_LEVEL_LOUD:   
+                    mask = LED_3; 
+                    /* Dispara el buzzer por 1 segundo sin bloquear la tarea */
+                    BuzzerOn();
+                    buzzer_ticks = 1000 / LED_TASK_PERIOD_MS;
+                    break;
                 case VOICE_LEVEL_SILENCE:
-                default:                 mask = 0;     break;
+                default:                 
+                    mask = 0;     
+                    break;
             }
             LedsMask(mask);
             last_shown = current;
+        }
+
+        /* Apagado automático del buzzer al transcurrir el segundo */
+        if(buzzer_ticks > 0){
+            buzzer_ticks--;
+            if(buzzer_ticks == 0){
+                BuzzerOff();
+            }
         }
 
         vTaskDelay(pdMS_TO_TICKS(LED_TASK_PERIOD_MS));
@@ -658,6 +685,7 @@ void app_main(void){
     LedsInit();
     LedsOffAll();
     SwitchesInit();
+    BuzzerInit(BUZZER_PIN);
 
     /* --- Creación de Tareas FreeRTOS --- */
     xTaskCreate(&AcquisitionTask, "acquisition", 2048, NULL, 6, &acquisition_task_handle);
